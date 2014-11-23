@@ -15,11 +15,8 @@ namespace Diploma2015.Entity
         public int height { get; set; }
 
         public Texture2D objTexture;
-       // public Texture2D[] objTextures { get; set; }
+        // public Texture2D[] objTextures { get; set; }
 
-        public  void Draw()
-        { }
-
-
+        
     }
 }

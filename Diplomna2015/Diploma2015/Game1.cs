@@ -24,6 +24,7 @@ namespace Diploma2015
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            this.IsMouseVisible = true;
         }
 
         /// <summary>
@@ -64,7 +65,6 @@ namespace Diploma2015
         {
             // TODO: Unload any non ContentManager content here
             ScreenManager.Instance.UnloadConent();
-
         }
 
         /// <summary>

@@ -14,7 +14,7 @@ namespace Diploma2015.Screens
         private static ScreenManager instance;
         public ContentManager Content { private set; get; }
 
-        Screen currentScreen;
+        public Screen currentScreen;
         
         public static ScreenManager Instance
         {
@@ -29,7 +29,14 @@ namespace Diploma2015.Screens
         private ScreenManager()
         { 
             Dimensions = new Vector2(640, 480);
+            currentScreen = new StartScreen();
+        }
+
+        public void changeToGameScreen()
+        {
+            currentScreen.UnloadContent();
             currentScreen = new GameScreen();
+            currentScreen.LoadContent();
         }
 
         public void LoadContent(ContentManager Content)

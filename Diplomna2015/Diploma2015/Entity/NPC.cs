@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Diploma2015.Entity
 {
-    public class NPC: Moveable
+    public class NPC: GameObject
     {
     }
 }

@@ -23,4 +23,6 @@ C:\Users\Administrator\Documents\Visual Studio 2013\Projects\MonoGame\Diplomna20
 C:\Users\Administrator\Documents\Visual Studio 2013\Projects\MonoGame\Diplomna2015\Diploma2015\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\Administrator\Documents\Visual Studio 2013\Projects\MonoGame\Diplomna2015\Diploma2015\obj\x86\Debug\Diploma2015.exe
 C:\Users\Administrator\Documents\Visual Studio 2013\Projects\MonoGame\Diplomna2015\Diploma2015\obj\x86\Debug\Diploma2015.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\MonoGame\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\StartScreen\startButton.jpg
 C:\Users\Administrator\Documents\Visual Studio 2013\Projects\MonoGame\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\GameScreen\start.jpg
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\MonoGame\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\StartScreen\mysticBackground.jpg

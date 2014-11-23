@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Diploma2015.Entity
 {
-    public class Player : Moveable
+    public class Player : GameObject
     {
         public Player(float x, float y, int w, int h, Texture2D text)
         {
@@ -22,6 +22,8 @@ namespace Diploma2015.Entity
             //    i += 1;
             //}
         }
+
+
 
 
     }

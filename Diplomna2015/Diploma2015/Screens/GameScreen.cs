@@ -12,6 +12,8 @@ namespace Diploma2015.Screens
     {
         Texture2D tex;
         string path;
+
+
         public override void LoadContent()
         {
             base.LoadContent();
@@ -26,6 +28,7 @@ namespace Diploma2015.Screens
 
         public override void Update(GameTime gameTime)
         {
+
             base.Update(gameTime);
         }
         public override void Draw(SpriteBatch spriteBatch)
