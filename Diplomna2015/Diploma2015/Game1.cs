@@ -36,6 +36,8 @@ namespace Diploma2015
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+
+            ScreenManager.Instance.Initialize();
             graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.Dimensions.X;
             graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.Dimensions.Y;
             graphics.ApplyChanges();

@@ -11,6 +11,10 @@ namespace Diploma2015.Screens
     public class Screen
     {
         protected ContentManager content;
+
+        public virtual void Initialize()
+        {
+        }
         public virtual void LoadContent()
         {
             content = new ContentManager( ScreenManager.Instance.Content.ServiceProvider, "Content" );

@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using Diploma2015.GameLogic;
+
 namespace Diploma2015.Screens
 {
     public class ScreenManager
@@ -28,14 +30,20 @@ namespace Diploma2015.Screens
         }
         private ScreenManager()
         { 
-            Dimensions = new Vector2(640, 480);
+            Dimensions = new Vector2(GameConsts.ScreenWidth, GameConsts.ScreenHeight);
             currentScreen = new StartScreen();
+        }
+
+        public void Initialize()
+        {
+            currentScreen.Initialize();
         }
 
         public void changeToGameScreen()
         {
             currentScreen.UnloadContent();
             currentScreen = new GameScreen();
+            currentScreen.Initialize();
             currentScreen.LoadContent();
         }
 

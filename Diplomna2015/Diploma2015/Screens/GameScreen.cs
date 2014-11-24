@@ -6,19 +6,24 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
+using Diploma2015.Entity;
+using Diploma2015.GameLogic;
 namespace Diploma2015.Screens
 {
     public class GameScreen : Screen
     {
-        Texture2D tex;
-        string path;
+        Player player;
 
+        public override void Initialize()
+        {
+            base.Initialize();
+            player = new Player(100, 100, GameConsts.PlayerWidth, GameConsts.PlayerHeight);
+        }
 
         public override void LoadContent()
         {
             base.LoadContent();
-            path = "GameScreen/start";
-            tex = content.Load<Texture2D>(path);
+            player.objTexture = content.Load<Texture2D>("GameScreen/player");
         }
 
         public override void UnloadContent()
@@ -28,15 +33,22 @@ namespace Diploma2015.Screens
 
         public override void Update(GameTime gameTime)
         {
+            InputHandler.Movement direction = InputHandler.Movement.Stand;
+            direction = InputHandler.getInput();
+            player.updatePlayer(direction);
 
             base.Update(gameTime);
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
-            spriteBatch.Draw(tex, Vector2.Zero, Color.White);
+            player.drawPlayer(spriteBatch);
+
             spriteBatch.End();
+            base.Draw(spriteBatch);
         }
+     
         
+
     }
 }
