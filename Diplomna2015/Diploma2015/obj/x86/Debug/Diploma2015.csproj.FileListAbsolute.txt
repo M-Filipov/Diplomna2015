@@ -27,3 +27,7 @@ C:\Users\Administrator\Documents\Visual Studio 2013\Projects\MonoGame\Diplomna20
 C:\Users\Administrator\Documents\Visual Studio 2013\Projects\MonoGame\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\GameScreen\start.jpg
 C:\Users\Administrator\Documents\Visual Studio 2013\Projects\MonoGame\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\StartScreen\mysticBackground.jpg
 C:\Users\Administrator\Documents\Visual Studio 2013\Projects\MonoGame\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\GameScreen\player.png
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\MonoGame\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\GameScreen\smiley.png
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\MonoGame\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\MapScreen\Dust.jpg
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\MonoGame\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\MapScreen\Lava.jpg
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\MonoGame\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\GameScreen\platform.png

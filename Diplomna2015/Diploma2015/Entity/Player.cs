@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace Diploma2015.Entity
 {
-    public class Player : GameObject
+    public class Player : Characters
     {
         public Player(float x, float y, int w, int h)
         {
@@ -17,27 +17,37 @@ namespace Diploma2015.Entity
             posY = y;
             height = h;
             width = w;
-           // objTexture = text;
-            //foreach( Texture2D text in objTextures )
-            //{
-            //    int i = 0;
-            //    objTextures[i] = text;
-            //    i += 1;
-            //}
         }
 
-        public void updatePlayer(InputHandler.Movement dir )
+        public void updatePlayer(List<InputHandler.Movement> moves )
         {
-            if (dir == InputHandler.Movement.Left)
-                posX -= GameConsts.PlayerSpeed;
-            if (dir == InputHandler.Movement.Right)
-                posX += GameConsts.PlayerSpeed;
+            foreach( InputHandler.Movement move in moves )
+            {
+                if(move == InputHandler.Movement.Left)
+                    posX -= GameConsts.PlayerSpeed;
+                if(move == InputHandler.Movement.Right)
+                    posX += GameConsts.PlayerSpeed;
+                if (move == InputHandler.Movement.Jump && hasJumped == false)
+                {
+                    base.oldY = posY;
+                    base.hasJumped = true;
+                }
+            }
+            base.Jump();
+            
+            base.Gravitation();
+            
             //if(dir == InputHandler.Movement.Stand
+        }
+
+        public void fall()
+        {
+            base.Gravitation();
         }
 
         public void drawPlayer(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw( objTexture, new Rectangle( (int)posX, (int)posY, width, height ), Color.White );
+          //  spriteBatch.Draw( objTexture, new Rectangle( (int)posX, (int)posY, width, height ), Color.White );
         }
 
     }

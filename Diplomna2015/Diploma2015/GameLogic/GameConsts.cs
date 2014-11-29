@@ -7,13 +7,16 @@ namespace Diploma2015.GameLogic
 {
     public class GameConsts
     {
-        public static int ScreenWidth = 640;
-        public static int ScreenHeight = 480;
+        public static int ScreenWidth = 760;
+        public static int ScreenHeight = 600;
 
-        public static int PlayerWidth = 100;
-        public static int PlayerHeight = 100;
+        public static int PlayerWidth = 40;
+        public static int PlayerHeight = 40;
         public static int PlayerSpeed = 10;
 
+        public static int gravity = 10;
+        public static int JumpHeight = 100;
+        public static int JumpSpeed = 10;
 
     }
 }

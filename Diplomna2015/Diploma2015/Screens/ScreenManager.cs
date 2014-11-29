@@ -43,8 +43,9 @@ namespace Diploma2015.Screens
         {
             currentScreen.UnloadContent();
             currentScreen = new GameScreen();
-            currentScreen.Initialize();
             currentScreen.LoadContent();
+            currentScreen.Initialize();
+
         }
 
         public void LoadContent(ContentManager Content)

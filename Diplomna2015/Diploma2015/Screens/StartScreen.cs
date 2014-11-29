@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
+using Diploma2015.GameLogic;
 namespace Diploma2015.Screens
 {
     class StartScreen : Screen
@@ -47,7 +48,7 @@ namespace Diploma2015.Screens
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
-            spriteBatch.Draw( background, new Rectangle(0, 0, 640, 480), Color.White );
+            spriteBatch.Draw( background, new Rectangle(0, 0, GameConsts.ScreenWidth, GameConsts.ScreenHeight), Color.White );
             spriteBatch.Draw( startButton, new Rectangle(startBposX, startBposY, 110, 60), Color.White );
             spriteBatch.End();
             base.Draw(spriteBatch);
