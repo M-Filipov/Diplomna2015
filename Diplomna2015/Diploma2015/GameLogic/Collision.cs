@@ -19,20 +19,23 @@ namespace Diploma2015.GameLogic
              //   if (colRight)
              //       obj.posX += GameConsts.PlayerSpeed;
                 if (colDown)
+                {
                     obj.posY -= GameConsts.gravity;
-                resetCols();
+                }
+                Console.WriteLine(colDown);
+                colDown = false;
+//            resetCols();
             }
-
         }
 
-        public static void resetCols()
+        private static void resetCols()
         {
             colDown = false;
             colLeft = false;
             colRight = false;
         }
 
-        public static void isColliding(GameObject obj, Platforms plat)
+        private static void isColliding(GameObject obj, Platforms plat)
         {
             if (obj.posX + obj.width >= plat.posX &&
                 obj.posY >= plat.posY &&
@@ -46,11 +49,12 @@ namespace Diploma2015.GameLogic
                 colLeft = true;
             if (obj.posX + obj.width >= plat.posX &&
                 obj.posX <= plat.posX + plat.width &&
-                (obj.posY + obj.height) == plat.posY 
+                (obj.posY + obj.height) >= plat.posY &&
+                obj.posY + obj.height <= plat.posY + plat.height
                 )
                 colDown = true;
         }
-
+        
     }
     
 }

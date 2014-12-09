@@ -29,7 +29,6 @@ namespace Diploma2015.GameLogic
             currentFrame++;
             if (currentFrame == totalFrames)
                 currentFrame = 0;
-
         }      
  
         public void Draw(SpriteBatch spriteBatch, int x, int y)
@@ -44,6 +43,5 @@ namespace Diploma2015.GameLogic
  
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
         }
-
     }
 }

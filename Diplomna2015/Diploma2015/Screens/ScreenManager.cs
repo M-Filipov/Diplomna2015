@@ -17,7 +17,7 @@ namespace Diploma2015.Screens
         public ContentManager Content { private set; get; }
 
         public Screen currentScreen;
-        
+
         public static ScreenManager Instance
         {
             get

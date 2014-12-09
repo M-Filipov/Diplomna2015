@@ -10,21 +10,26 @@ namespace Diploma2015.Entity
     {
         public bool hasJumped;
         public float oldY;
+        public int jumpPower;
         public virtual void Gravitation()
         {
-            posY += 10; 
+            posY += GameConsts.gravity;
+ //         Console.WriteLine("gravity");
         }
 
         public virtual void Jump()
         {
-
             if (hasJumped == true)
             {
-                posY -= GameConsts.gravity + GameConsts.JumpSpeed ;
+                posY -= jumpPower ;
+                jumpPower -= 1;
             }
-
-            if (oldY - posY  == GameConsts.JumpHeight)
+           
+            if (jumpPower <= 0)
+            {
                 hasJumped = false;
+                jumpPower = 0;
+            }
         }
 
     }

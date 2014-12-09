@@ -7,8 +7,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
-
 #endregion
+
 using Diploma2015.Entity;
 using Diploma2015.Screens;
 
@@ -16,6 +16,7 @@ namespace Diploma2015
 {
     public class Game1 : Game
     {
+        Game game = new Game();
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -25,6 +26,8 @@ namespace Diploma2015
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             this.IsMouseVisible = true;
+            this.Window.AllowUserResizing = true;
+            graphics.IsFullScreen = true;
         }
 
         /// <summary>

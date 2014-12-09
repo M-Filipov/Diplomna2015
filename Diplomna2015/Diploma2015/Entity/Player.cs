@@ -21,6 +21,11 @@ namespace Diploma2015.Entity
 
         public void updatePlayer(List<InputHandler.Movement> moves )
         {
+            Vector2 position = new Vector2();
+            Vector2 veloicty;
+            position += new Vector2(5, 0);
+            position.X += 5;
+
             foreach( InputHandler.Movement move in moves )
             {
                 if(move == InputHandler.Movement.Left)
@@ -29,17 +34,16 @@ namespace Diploma2015.Entity
                     posX += GameConsts.PlayerSpeed;
                 if (move == InputHandler.Movement.Jump && hasJumped == false)
                 {
-                    base.oldY = posY;
+ //                   base.oldY = posY;
                     base.hasJumped = true;
+                    base.jumpPower = 34;
                 }
             }
             base.Jump();
-            
-            base.Gravitation();
-            
-            //if(dir == InputHandler.Movement.Stand
-        }
 
+            base.Gravitation();    
+        }
+        
         public void fall()
         {
             base.Gravitation();
