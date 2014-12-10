@@ -22,9 +22,8 @@ namespace Diploma2015.GameLogic
                 {
                     obj.posY -= GameConsts.gravity;
                 }
-                Console.WriteLine(colDown);
-                colDown = false;
-//            resetCols();
+    //            Console.WriteLine(colDown);
+                resetCols();
             }
         }
 

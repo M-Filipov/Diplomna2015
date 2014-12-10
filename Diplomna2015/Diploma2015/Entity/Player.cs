@@ -36,7 +36,7 @@ namespace Diploma2015.Entity
                 {
  //                   base.oldY = posY;
                     base.hasJumped = true;
-                    base.jumpPower = 34;
+                    base.jumpPower = 30;
                 }
             }
             base.Jump();

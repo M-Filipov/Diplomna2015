@@ -62,7 +62,6 @@
     <Compile Include="GameLogic\Animation.cs" />
     <Compile Include="GameLogic\Collision.cs" />
     <Compile Include="GameLogic\GameConsts.cs" />
-    <Compile Include="GameLogic\GameWindowExtension.cs" />
     <Compile Include="GameLogic\InputHandler.cs" />
     <Compile Include="Screens\GameScreen.cs" />
     <Compile Include="Screens\MapScreen.cs" />
