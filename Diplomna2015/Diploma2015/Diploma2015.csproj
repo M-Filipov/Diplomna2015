@@ -53,11 +53,17 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Abilities\Ability.cs" />
+    <Compile Include="Abilities\Ranged\FireBall.cs" />
+    <Compile Include="Abilities\Ranged\FrostBolt.cs" />
+    <Compile Include="Abilities\Ranged\Ranged.cs" />
+    <Compile Include="Abilities\Ranged\Shield.cs" />
     <Compile Include="Entity\Characters.cs" />
     <Compile Include="Entity\NPC.cs" />
     <Compile Include="Entity\Platforms.cs" />
     <Compile Include="Entity\Player.cs" />
     <Compile Include="Entity\GameObject.cs" />
+    <Compile Include="Entity\Projectile.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameLogic\Animation.cs" />
     <Compile Include="GameLogic\Collision.cs" />
@@ -79,32 +85,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\GameScreen\npc1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="Content\assets\2d\characters\npc1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\GameScreen\platform.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="Content\assets\2d\characters\smiley.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\GameScreen\player.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="Content\assets\2d\terrain\Dust.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\GameScreen\smiley.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="Content\assets\2d\terrain\platform.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\GameScreen\start.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="Content\assets\2d\gui\mysticBackground.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\MapScreen\Dust.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\MapScreen\Lava.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\StartScreen\startButton.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\StartScreen\mysticBackground.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="Content\assets\2d\gui\startButton.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icon.ico" />
   </ItemGroup>
@@ -130,7 +127,13 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\assets\audio\" />
+    <Folder Include="Gui\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\assets\Fonts\kenvector_future.ttf" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

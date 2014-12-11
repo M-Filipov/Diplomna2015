@@ -20,8 +20,8 @@ namespace Diploma2015.Screens
         public override void LoadContent()
         {
             base.LoadContent();
-            background = content.Load<Texture2D>("StartScreen/mysticBackground");
-            startButton = content.Load<Texture2D>("StartScreen/startButton");
+            background = content.Load<Texture2D>("assets/2d/gui/mysticBackground");
+            startButton = content.Load<Texture2D>("assets/2d/gui/startButton");
             //startButtonPos = new Vector2(350, 250);
         }
 

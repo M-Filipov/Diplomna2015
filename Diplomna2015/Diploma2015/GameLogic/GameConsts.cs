@@ -14,8 +14,8 @@ namespace Diploma2015.GameLogic
         public static int PlayerHeight = 40;
         public static int PlayerSpeed = 10;
 
-        public static int Npc1W = 40;
-        public static int Npc1H = 40;
+        public static int Npc1W = 100;
+        public static int Npc1H = 100;
 
         public static int gravity = 10;
         public static int JumpHeight = 100;

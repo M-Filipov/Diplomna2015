@@ -26,12 +26,12 @@ namespace Diploma2015.Entity
 
         }
 
-        public NPC(int x, int y, int w, int h)
+        public NPC(Vector2 position, int width, int height)
         {
-            base.posX = x;
-            base.posY = y;
-            base.width = w;
-            base.height = h;
+            this.position.X = position.X;
+            this.position.Y = position.Y;
+            this.width = width;
+            this.height = height;
 
             meleeRange = 80;
         }
@@ -49,11 +49,11 @@ namespace Diploma2015.Entity
             foreach (InputHandler.Movement move in moves)
             {
                 if (move == InputHandler.Movement.Stand)
-                    posX = posX;
+                    continue;
                 if (move == InputHandler.Movement.Left)
-                    posX -= 3;
+                    position.X -= 3;
                 if (move == InputHandler.Movement.Right)
-                    posX += 3;
+                    position.X += 3;
                 if (move == InputHandler.Movement.Jump && hasJumped == false)
                 {
                     base.jumpPower = 35;
@@ -91,13 +91,13 @@ namespace Diploma2015.Entity
         {
             if (InMeleeRangeLeft(player))
             {
-                Console.WriteLine("From left");
+                //Console.WriteLine("From left");
                 // play melee atk anim left
                 // deal melee dmg on player
             }
             if (InMeleeRangeRight(player))
             {
-                Console.WriteLine("from right");
+                //Console.WriteLine("from right");
                 // play melee atk anim left
                 // deal melee dmg on player
             }
@@ -107,7 +107,7 @@ namespace Diploma2015.Entity
 
         public bool InMeleeRangeRight(Player player)
         {
-            if (posX + meleeRange >= player.posX && posX < player.posX)
+            if (position.X + meleeRange >= player.position.X && position.X < player.position.X)
                 return true;
             
             return false;
@@ -115,14 +115,14 @@ namespace Diploma2015.Entity
 
         public bool InMeleeRange(Player player)
         {
-            if (posX - meleeRange < player.posX && posX + meleeRange > posX)
+            if (position.X - meleeRange < player.position.X && position.X + meleeRange > position.X)
                 return true;
             return false;
         }
 
         public bool InMeleeRangeLeft(Player player)
         {
-            if (posX - meleeRange <= player.posX && player.posX < posX)
+            if (position.X - meleeRange <= player.position.X && player.position.X < position.X)
                 return true;
 
             return false;
@@ -132,15 +132,15 @@ namespace Diploma2015.Entity
         {
             moves = new List<InputHandler.Movement>();
 
-            if (player.posX == posX && player.posY == posY)
+            if (player.position.X == position.X && player.position.Y == position.Y)
                 moves.Add(InputHandler.Movement.Stand);
             else
             {
-                if (player.posX > posX)
+                if (player.position.X > position.X)
                     moves.Add(InputHandler.Movement.Right);
-                if (player.posX < posX)
+                if (player.position.X < position.X)
                     moves.Add(InputHandler.Movement.Left);
-                if (player.posY < posY && thereIsPlatform(platforms))
+                if (player.position.Y < position.Y && thereIsPlatform(platforms))
                     moves.Add(InputHandler.Movement.Jump);
             }
             return moves;
@@ -148,13 +148,13 @@ namespace Diploma2015.Entity
 
         private bool thereIsPlatform(List<Platforms> platforms)
         {
-            for (int i = (int)posY; i > posY-100; i--)
+            for (int i = (int)position.Y; i > position.Y-100; i--)
             {
                 foreach (Platforms platform in platforms)
                 {
-                    if (i == platform.posY &&
-                        posX >= platform.posX &&
-                        posX <= platform.posX + platform.width)
+                    if (i == platform.position.Y &&
+                        position.X >= platform.position.X &&
+                        position.X <= platform.position.X + platform.width)
                             return true;
                 }
             }

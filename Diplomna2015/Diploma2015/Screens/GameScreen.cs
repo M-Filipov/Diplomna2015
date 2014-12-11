@@ -20,8 +20,8 @@ namespace Diploma2015.Screens
         public override void Initialize()
         {
             base.Initialize();
-            player = new Player(100, 500, GameConsts.PlayerWidth, GameConsts.PlayerHeight);
-            npc1 = new NPC(200, 400, GameConsts.Npc1W, GameConsts.Npc1H);
+            player = new Player(new Vector2(100, 500), GameConsts.PlayerWidth, GameConsts.PlayerHeight);
+            npc1 = new NPC(new Vector2(200, 400), GameConsts.Npc1W, GameConsts.Npc1H);
             playerAnim = new Animation(playerSprite, 4, 4);
             npc1Anim = new Animation(npc1Sprite, 6, 2);
             platforms = new List<Platforms>();
@@ -33,10 +33,10 @@ namespace Diploma2015.Screens
         {
             base.LoadContent();
             //player.objTexture = content.Load<Texture2D>("GameScreen/player");
-            playerSprite = content.Load<Texture2D>("GameScreen/smiley");
-            background = content.Load<Texture2D>("MapScreen/Dust");
-            groundTex = content.Load<Texture2D>("GameScreen/platform");
-            npc1Sprite = content.Load<Texture2D>("GameScreen/npc1");
+            playerSprite = content.Load<Texture2D>("assets/2d/characters/smiley");
+            background = content.Load<Texture2D>("assets/2d/terrain/Dust");
+            groundTex = content.Load<Texture2D>("assets/2d/terrain/platform");
+            npc1Sprite = content.Load<Texture2D>("assets/2d/characters/npc1");
         }
 
         public override void UnloadContent()
@@ -63,15 +63,15 @@ namespace Diploma2015.Screens
             spriteBatch.Begin();
         
             spriteBatch.Draw(background, new Rectangle(0, 0, GameConsts.ScreenWidth, GameConsts.ScreenHeight), Color.White);
-            //spriteBatch.Draw(groundTex, new Rectangle((int)ground.posX, (int)ground.posY, ground.width, ground.height ), Color.White);
-            playerAnim.Draw(spriteBatch, (int)player.posX, (int)player.posY);
+            //spriteBatch.Draw(groundTex, new Rectangle((int)ground.position.X, (int)ground.position.Y, ground.width, ground.height ), Color.White);
+            playerAnim.Draw(spriteBatch, (int)player.position.X, (int)player.position.Y);
 
-            spriteBatch.Draw(npc1Sprite, new Rectangle((int)npc1.posX, (int)npc1.posY, npc1.width, npc1.height), Color.White);
+            spriteBatch.Draw(npc1Sprite, new Rectangle((int)npc1.position.X, (int)npc1.position.Y, npc1.width, npc1.height), Color.White);
             
             
             foreach (Platforms pl in platforms)
             {
-                spriteBatch.Draw(groundTex, new Rectangle((int)pl.posX, (int)pl.posY, pl.width, pl.height), Color.White);
+                spriteBatch.Draw(groundTex, new Rectangle((int)pl.position.X, (int)pl.position.Y, pl.width, pl.height), Color.White);
             }
 
             spriteBatch.End();

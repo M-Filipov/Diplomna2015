@@ -8,19 +8,23 @@ namespace Diploma2015.GameLogic
 {
     public static class Collision
     {
-        static bool colLeft = false, colRight = false, colUp = false, colDown = false;
+        static bool colLeft = false, 
+                    colRight = false, 
+                    colUp = false, 
+                    colDown = false;
+
         public static void coll(GameObject obj, List<Platforms> platforms)
         {
-            foreach (Platforms plat in platforms)
+            foreach (Platforms obj2 in platforms)
             {
-                isColliding(obj, plat);
+                isColliding(obj, obj2);
              //   if (colLeft)
-              //      obj.posX -= GameConsts.PlayerSpeed;
+              //      obj.position.X -= GameConsts.PlayerSpeed;
              //   if (colRight)
-             //       obj.posX += GameConsts.PlayerSpeed;
+             //       obj.position.X += GameConsts.PlayerSpeed;
                 if (colDown)
                 {
-                    obj.posY -= GameConsts.gravity;
+                    obj.position.Y -= GameConsts.gravity;
                 }
     //            Console.WriteLine(colDown);
                 resetCols();
@@ -34,22 +38,22 @@ namespace Diploma2015.GameLogic
             colRight = false;
         }
 
-        private static void isColliding(GameObject obj, Platforms plat)
+        private static void isColliding(GameObject obj1, GameObject obj2)
         {
-            if (obj.posX + obj.width >= plat.posX &&
-                obj.posY >= plat.posY &&
-                obj.posY <= plat.posY + plat.height
+            if (obj1.position.X + obj1.width >= obj2.position.X &&
+                obj1.position.Y >= obj2.position.Y &&
+                obj1.position.Y <= obj2.position.Y + obj2.height
               )
                 colRight = true;
-            if (obj.posX >= plat.posX + plat.width &&
-                obj.posY >= plat.posY &&
-                obj.posY >= plat.posY + plat.height
+            if (obj1.position.X >= obj2.position.X + obj2.width &&
+                obj1.position.Y >= obj2.position.Y &&
+                obj1.position.Y >= obj2.position.Y + obj2.height
                 )
                 colLeft = true;
-            if (obj.posX + obj.width >= plat.posX &&
-                obj.posX <= plat.posX + plat.width &&
-                (obj.posY + obj.height) >= plat.posY &&
-                obj.posY + obj.height <= plat.posY + plat.height
+            if (obj1.position.X + obj1.width >= obj2.position.X &&
+                obj1.position.X <= obj2.position.X + obj2.width &&
+                (obj1.position.Y + obj1.height) >= obj2.position.Y &&
+                obj1.position.Y + obj1.height <= obj2.position.Y + obj2.height
                 )
                 colDown = true;
         }

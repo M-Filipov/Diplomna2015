@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using Diploma2015.GameLogic;
+using Diploma2015.Abilities;
 namespace Diploma2015.Entity
 {
     public abstract class Characters : GameObject
@@ -11,9 +12,12 @@ namespace Diploma2015.Entity
         public bool hasJumped;
         public float oldY;
         public int jumpPower;
+
+        public List<Ability> abilitySet;
+
         public virtual void Gravitation()
         {
-            posY += GameConsts.gravity;
+            position.Y += GameConsts.gravity;
  //         Console.WriteLine("gravity");
         }
 
@@ -21,7 +25,7 @@ namespace Diploma2015.Entity
         {
             if (hasJumped == true)
             {
-                posY -= jumpPower ;
+                position.Y -= jumpPower ;
                 jumpPower -= 1;
             }
            

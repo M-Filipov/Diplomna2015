@@ -16,9 +16,9 @@ namespace Diploma2015
 {
     public class Game1 : Game
     {
-        Game game = new Game();
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private Game game = new Game();
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
 
         public Game1()
             : base()

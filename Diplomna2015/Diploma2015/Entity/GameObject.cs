@@ -9,15 +9,10 @@ namespace Diploma2015.Entity
 {
     public abstract class GameObject
     {
-        //public Vector2 objLocation { public get; set; }
-        public float posX { get; set; }
-        public float posY { get; set; }
+        public Vector2 position;
 
         public int width { get; set; }
         public int height { get; set; }
-
-       // public Texture2D objTexture;
-        // public Texture2D[] objTextures { get; set; }
 
     }
 }

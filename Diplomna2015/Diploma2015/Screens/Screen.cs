@@ -29,8 +29,7 @@ namespace Diploma2015.Screens
         }
 
         public virtual void Draw( SpriteBatch spriteBatch )
-        {
-            
+        {   
         }
 
 
