@@ -13,7 +13,7 @@ namespace Diploma2015.GameLogic
                     colUp = false, 
                     colDown = false;
 
-        public static void coll(GameObject obj, List<Platforms> platforms)
+        public static void coll(Characters obj, List<Platforms> platforms)
         {
             foreach (Platforms obj2 in platforms)
             {
@@ -24,9 +24,9 @@ namespace Diploma2015.GameLogic
              //       obj.position.X += GameConsts.PlayerSpeed;
                 if (colDown)
                 {
-                    obj.position.Y -= GameConsts.gravity;
+                    obj.position.Y = obj2.position.Y - obj.height;
+                    obj.grounded = true;
                 }
-    //            Console.WriteLine(colDown);
                 resetCols();
             }
         }

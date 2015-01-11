@@ -69,6 +69,7 @@
     <Compile Include="GameLogic\Collision.cs" />
     <Compile Include="GameConsts.cs" />
     <Compile Include="GameLogic\InputHandler.cs" />
+    <Compile Include="GameLogic\Node.cs" />
     <Compile Include="Gui\Button.cs" />
     <Compile Include="Gui\GUIComponent.cs" />
     <Compile Include="Gui\GUIManager.cs" />
@@ -120,6 +121,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\assets\2d\gui\symb_volume.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\assets\2d\nodeTex.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\assets\2d\terrain\Dust.jpg">

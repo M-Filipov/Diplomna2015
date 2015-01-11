@@ -14,8 +14,8 @@ namespace Diploma2015
         public const int PlayerHeight = 40;
         public const int PlayerSpeed = 10;
 
-        public const int Npc1W = 100;
-        public const int Npc1H = 100;
+        public const int Npc1W = 20;
+        public const int Npc1H = 20;
 
         public const int gravity = 10;
         public const int JumpHeight = 100;

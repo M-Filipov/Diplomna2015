@@ -5,19 +5,28 @@ using System.Text;
 
 using Diploma2015.GameLogic;
 using Diploma2015.Abilities;
+using Microsoft.Xna.Framework;
 namespace Diploma2015.Entity
 {
     public abstract class Characters : GameObject
     {
         public bool hasJumped;
-        public float oldY;
-        public int jumpPower;
+        public bool grounded;
+//      public int jumpPower;
+        protected int hp;
+        protected int meleeRange;
+        protected int magicRange;
+
+        protected Node currentNodeOn;
+
+        public Vector2 velocity;
 
         public List<Ability> abilitySet;
 
         public virtual void Gravitation()
         {
             position.Y += GameConsts.gravity;
+
  //         Console.WriteLine("gravity");
         }
 
@@ -25,14 +34,14 @@ namespace Diploma2015.Entity
         {
             if (hasJumped == true)
             {
-                position.Y -= jumpPower ;
-                jumpPower -= 1;
+                position.Y += velocity.Y ;
+                velocity.Y += 1;
             }
            
-            if (jumpPower <= 0)
+            if (velocity.Y >= 0)
             {
                 hasJumped = false;
-                jumpPower = 0;
+                velocity.Y = 0;
             }
         }
 

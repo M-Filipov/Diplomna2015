@@ -15,8 +15,12 @@ namespace Diploma2015.Entity
         {
             this.position.X = position.X;
             this.position.Y = position.Y;
+            this.velocity.X = 0;
+            this.velocity.Y = 10;
             this.width = width;
             this.height = height;
+
+            hp = 100;
         }
 
         public void updatePlayer(List<InputHandler.Movement> moves )
@@ -27,11 +31,12 @@ namespace Diploma2015.Entity
                     position.X -= GameConsts.PlayerSpeed;
                 if(move == InputHandler.Movement.Right)
                     position.X += GameConsts.PlayerSpeed;
-                if (move == InputHandler.Movement.Jump && hasJumped == false)
+                if (move == InputHandler.Movement.Jump && !hasJumped && grounded)
                 {
  //                   base.oldY = position.Y;
                     base.hasJumped = true;
-                    base.jumpPower = 30;
+                    base.grounded = false;
+                    velocity.Y = -30;
                 }
             }
             base.Jump();
