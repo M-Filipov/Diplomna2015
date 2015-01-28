@@ -180,3 +180,6 @@ C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\bin
 C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\bin\Windows\Debug\SharpDX.RawInput.xml
 C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\obj\x86\Debug\Diploma2015.csprojResolveAssemblyReference.cache
+C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\characters\whitePlayer.png
+C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\characters\firePlayer.png
+C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\characters\redPlayer.png
