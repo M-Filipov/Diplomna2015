@@ -6,9 +6,9 @@ using System.Collections.Generic;
 
 namespace Diploma2015.Gui
 {
-    class GUIManager
+    public class GUIManager
     {
-        public List<GUIComponent> components;
+        public List<GUIComponent> components = new List<GUIComponent>();
 
         private Vector2 mousePosition;
         public GUIManager()

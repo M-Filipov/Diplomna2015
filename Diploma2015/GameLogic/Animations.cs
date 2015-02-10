@@ -10,9 +10,12 @@ namespace Diploma2015.GameLogic
     public class Animations
     {
         private Texture2D texture { get; set; }
-        private int currentFrame;
+        public int currentFrame;
+        private int animPerS;
         public Rectangle frameToDraw;
         public Rectangle destRect;
+        public int totalFrames;
+
 
         public Dictionary<string, List<Rectangle>> spriteAnimations = new Dictionary<string,List<Rectangle>>();
  
@@ -20,12 +23,14 @@ namespace Diploma2015.GameLogic
         {
             texture = sprite;
             currentFrame = 0;
+            animPerS = 0;
         }
 
         public void AddAnimations(int frames, int xStartFrame, int yStartFrame, string name, int width, int height)
         {
+            totalFrames = frames;
             List<Rectangle> anims = new List<Rectangle>();
-            for(int i = 0; i < frames; i++)
+            for(int i = 0; i < totalFrames; i++)
             {
                 Rectangle anim = new Rectangle((xStartFrame + i) * width, yStartFrame * height, width, height);
                 anims.Add(anim);
@@ -40,10 +45,13 @@ namespace Diploma2015.GameLogic
             {
                 if (currentFrame >= spriteAnimations[name].Count)
                     currentFrame = 0;
+                if (animPerS <= 5)
+                    animPerS++;
                 else
                 {
                     frameToDraw = spriteAnimations[name].ElementAt(currentFrame);
                     currentFrame++;
+                    animPerS = 0;
                 }
             }
 

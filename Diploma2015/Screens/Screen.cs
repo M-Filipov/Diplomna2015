@@ -41,9 +41,9 @@ namespace Diploma2015.Screens
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();
+            //spriteBatch.Begin();
             spriteBatch.Draw(cursorTex, new Rectangle(cursorPosition.X, cursorPosition.Y, 50, 50), Color.White);
-            spriteBatch.End();
+            //spriteBatch.End();
         }
 
 

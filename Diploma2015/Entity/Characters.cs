@@ -12,22 +12,30 @@ namespace Diploma2015.Entity
     {
         public bool hasJumped;
         public bool grounded;
-//      public int jumpPower;
         protected int hp;
+        protected int energy;
         protected int meleeRange;
         protected int magicRange;
 
         protected Node currentNodeOn;
 
         public Vector2 velocity;
+        public String characterDir;
 
         public List<Ability> abilitySet;
+        public List<Ability> rangedAbility = new List<Ability>();
+        public List<Animations> abilityAnimations = new List<Animations>();
 
         public virtual void Gravitation()
         {
             position.Y += GameConsts.gravity;
+        }
 
- //         Console.WriteLine("gravity");
+        public virtual void RegenEnergy()
+        {
+            energy += 1;
+            if (energy >= 100)
+                energy = 100;
         }
 
         public virtual void Jump()
@@ -35,6 +43,7 @@ namespace Diploma2015.Entity
             if (hasJumped == true)
             {
                 position.Y += velocity.Y ;
+
                 velocity.Y += 1;
             }
            

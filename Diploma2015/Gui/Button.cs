@@ -9,7 +9,7 @@ namespace Diploma2015.Gui
     {
         public Texture2D onClickTex { get; set; }
         public Texture2D onFreeTex { get; set; }
-
+        
         private int posDiff,
                     sizeDiff,
                     scaleDiff;

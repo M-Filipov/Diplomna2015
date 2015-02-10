@@ -63,9 +63,9 @@ namespace Diploma2015.Screens
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            // spriteBatch.Begin();
+            spriteBatch.Begin();
             currentScreen.Draw(spriteBatch);
-            // spriteBatch.End();
+            spriteBatch.End();
         }
 
     }

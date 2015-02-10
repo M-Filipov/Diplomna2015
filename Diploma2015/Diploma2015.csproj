@@ -47,7 +47,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -70,9 +71,13 @@
     <Compile Include="GameConsts.cs" />
     <Compile Include="GameLogic\InputHandler.cs" />
     <Compile Include="GameLogic\Node.cs" />
+    <Compile Include="Gui\SelectingImgs.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Gui\Button.cs" />
     <Compile Include="Gui\GUIComponent.cs" />
     <Compile Include="Gui\GUIManager.cs" />
+    <Compile Include="Screens\CharacterScreen.cs" />
     <Compile Include="Screens\GameScreen.cs" />
     <Compile Include="Screens\HelpScreen.cs" />
     <Compile Include="Screens\MapScreen.cs" />
@@ -93,6 +98,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\2d\abilities\fireBall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\assets\2d\abilities\fireBallAnim.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\assets\2d\characters\firePlayer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -123,6 +134,9 @@
     <Content Include="Content\assets\2d\gui\crs_arrow.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\assets\2d\gui\imgSelectingBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\assets\2d\gui\symb_leftarrow.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -144,7 +158,6 @@
     <Content Include="Content\assets\2d\gui\mysticBackground.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

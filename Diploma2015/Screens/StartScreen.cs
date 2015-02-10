@@ -67,7 +67,7 @@ namespace Diploma2015.Screens
 
             if (gManager.components[0].isMouseClicked)
             {
-                ScreenManager.Instance.ChangeToScreen(new GameScreen());
+                ScreenManager.Instance.ChangeToScreen(new CharacterScreen());
             }
             else if (gManager.components[1].isMouseClicked)
             {
@@ -94,7 +94,7 @@ namespace Diploma2015.Screens
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();
+//            spriteBatch.Begin();
 
             spriteBatch.Draw(background, new Rectangle(0, 0, GameConsts.ScreenWidth, GameConsts.ScreenHeight), Color.White);
 
@@ -111,7 +111,7 @@ namespace Diploma2015.Screens
 
                 spriteBatch.Draw(soundTex, new Rectangle(0 + 20, GameConsts.ScreenHeight - GameConsts.CircleButtonRadius + 20, 50, 50), Color.White);
             }
-            spriteBatch.End();
+//            spriteBatch.End();
             base.Draw(spriteBatch);
 
         }

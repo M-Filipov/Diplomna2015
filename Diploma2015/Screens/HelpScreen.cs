@@ -50,9 +50,7 @@ namespace Diploma2015.Screens
 
         public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
         {
-            
-
-            spriteBatch.Begin();
+//            spriteBatch.Begin();
 
             foreach (GUIComponent gComponent in gManager.components)
             {
@@ -64,9 +62,10 @@ namespace Diploma2015.Screens
 
             spriteBatch.Draw(exitTexture, new Rectangle(gManager.components[0].componentRectangle.X + 105 , GameConsts.ScreenHeight - 52, 80, 40), Color.White);
 
-            spriteBatch.End();
+//            spriteBatch.End();
 
             base.Draw(spriteBatch);
-        }
+        }
+
     }
 }

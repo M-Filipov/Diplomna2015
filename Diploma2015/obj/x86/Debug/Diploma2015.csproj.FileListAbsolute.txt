@@ -183,3 +183,7 @@ C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\obj
 C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\characters\whitePlayer.png
 C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\characters\firePlayer.png
 C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\characters\redPlayer.png
+C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\abilities\fireBallAnim.png
+C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\abilities\fireBall.png
+C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\bin\Windows\Debug\Gui\SelectingImgs.cs
+C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\imgSelectingBackground.png

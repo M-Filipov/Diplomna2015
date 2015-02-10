@@ -4,7 +4,7 @@ using System;
 
 namespace Diploma2015.Gui
 {
-    public abstract class GUIComponent
+    public class GUIComponent : GUIManager
     {
         public Rectangle componentRectangle { get; set; }
         public Texture2D currentTexture { get; set; }

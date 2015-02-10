@@ -36,7 +36,6 @@ namespace Diploma2015.Entity
             meleeAttacking,
             runningAway,
             following,
-
         }
         
         public NPC(Vector2 position, int width, int height, int hp, int meleeR, int magicR)
@@ -73,7 +72,7 @@ namespace Diploma2015.Entity
 
         }
 
-        public void update(GameTime gameTime)
+        public void Update(GameTime gameTime)
         {
             handleMovement();
             base.Jump();
@@ -125,36 +124,10 @@ namespace Diploma2015.Entity
 
         public void AI(Player player, List<Platforms> platforms, GameTime gameTime)
         {
-
-            bool check = CheckIfPassiveForTooLong(gameTime);
+            bool passiveForTooLong = CheckIfPassiveForTooLong(gameTime);
         
-            ConsiderState();
-//            Console.WriteLine(FindClosestNode(new Vector2(500, 540)).NodePos);
-//            Console.WriteLine(" = " + currentStartNode.NodePos);
-//            Console.WriteLine(" - " + currentEndNode.NodePos);
-            if (currentNodeOn.NodePos == currentEndNode.NodePos || check)
-            {
-                currentStartNode = FindClosestNode( this.position, this.height);
-        //       currentEndNode.NodePos = new Vector2(0, 0);
-                
-                currentEndNode = FindClosestNode(player.position, player.height);
-                
-  //              Console.WriteLine("ENDA = " + currentEndNode.NodePos);
-                if( (currentEndNode.NodePos.X != 0 && currentEndNode.NodePos.Y != 0 && currentEndNode.NodePos != currentNodeOn.NodePos) || 
-                    check)
-                {
-                    currentIndexInPath = 0;
-                    road = new List<Node>();
- 
-                    road = plat.Astar(currentStartNode, currentEndNode);
-                    foreach (Node n in road)
-                    {
-                    }
-                }
-    //            else
-//                  Console.WriteLine(" === IZKARA NULATA ");
-            }
- 
+            ConsiderNpcState();
+         
             switch (currentState)
             {
                 case States.meleeAttacking:
@@ -166,13 +139,67 @@ namespace Diploma2015.Entity
                 case States.rangeAttacking:
 
                     break;
+                case States.runningAway:
+                    IfEndReachedOrPassiveCleanOldPathCallAStar(player, passiveForTooLong, "farrestNode");
+
+                    break;
+                case States.following:
+                    IfEndReachedOrPassiveCleanOldPathCallAStar(player, passiveForTooLong, "playerNode");
+                    break;
             }
+            //if (currentNodeOn.NodePos == currentEndNode.NodePos || check)
+            //{
+                //currentStartNode = FindClosestNode( this.position, this.height);
+                //currentEndNode.NodePos = new Vector2(0, 0);
+                //currentEndNode = FindClosestNode(player.position, player.height);
 
-            CallChase(player, road, gameTime);
+                if( (currentEndNode.NodePos != new Vector2(0, 0) && currentEndNode.NodePos != currentNodeOn.NodePos) &&
+                    passiveForTooLong)
+                {
+                    currentIndexInPath = 0;
+                    road = new List<Node>();
+                    road = plat.Astar(currentStartNode, currentEndNode);
+                }
+            //}
 
+            CallChasePlayerEveryXSeconds(player, road, gameTime);
         }
 
-        public void ConsiderState()
+        private void IfEndReachedOrPassiveCleanOldPathCallAStar(Player player, bool passiveForTooLong, string destNode)
+        {
+            if (currentNodeOn.NodePos == currentEndNode.NodePos || passiveForTooLong)
+            {
+                currentStartNode = FindClosestNode(this.position, this.height);
+                //currentEndNode.NodePos = new Vector2(0, 0);
+
+                if(destNode == "farrestNode")
+                    currentEndNode = findFarrestNode();                             // run to the farrest part of the map
+                else
+                    currentEndNode = FindClosestNode(player.position, player.height);
+
+                if ((currentEndNode.NodePos.X != 0 && currentEndNode.NodePos.Y != 0 && currentEndNode.NodePos != currentNodeOn.NodePos) ||
+                    passiveForTooLong)
+                {
+                    currentEndNode = FindClosestNode(player.position, player.height);
+                    currentIndexInPath = 0;
+                    road = new List<Node>();
+                    road = plat.Astar(currentStartNode, currentEndNode);
+                }
+            }
+        }
+
+
+        private Node findFarrestNode()
+        {
+            Node farrestNode = new Node(new Vector2(0, 0));
+            
+            // TODO: find the farrest from player node 
+
+
+            return farrestNode;
+        }
+
+        public void ConsiderNpcState()
         {
             if (hp <= 15)
             {
@@ -180,14 +207,16 @@ namespace Diploma2015.Entity
             }
             else
             {
-                // if( npcHasRangeSkill && !hasCoolDown() ) 
+                // if( npcHasRangeSkill && !hasCoolDown() && inRangeSkillRange()) 
                 //      currentState = RangeAttacking
-                // else if( npcHasMeleeSkill && !hasCoolDown() )
-                //          currentState = meleeAttacking
+                // else if( npcHasMeleeSkill && !hasCoolDown() && inMeleeSkillRange() )
+                //      currentState = meleeAttacking
+                // else 
+                      currentState = States.following;
             }
         }
 
-        private void CallChase(Player player, List<Node> road, GameTime gameTime)
+        private void CallChasePlayerEveryXSeconds(Player player, List<Node> road, GameTime gameTime)
         {
             timeElapsed = gameTime.TotalGameTime.Seconds;
 
@@ -202,10 +231,9 @@ namespace Diploma2015.Entity
                 
                 moves = new List<InputHandler.Movement>();
             }
-//            Console.WriteLine(timeElapsed);
         }
 
-        public void meleeAttackPlayer(Player player)
+        private void meleeAttackPlayer(Player player)
         {
             if (InMeleeRangeLeft(player))
             {
@@ -223,22 +251,21 @@ namespace Diploma2015.Entity
 
         }
 
-        public bool InMeleeRangeRight(Player player)
+        private bool InMeleeRangeRight(Player player)
         {
             if (position.X + meleeRange >= player.position.X && position.X < player.position.X)
                 return true;
-
             return false;
         }
 
-        public bool InMeleeRange(Player player)
+        private bool InMeleeRange(Player player)
         {
             if (position.X - meleeRange < player.position.X && position.X + meleeRange > position.X)
                 return true;
             return false;
         }
 
-        public bool InMeleeRangeLeft(Player player)
+        private bool InMeleeRangeLeft(Player player)
         {
             if (position.X - meleeRange <= player.position.X && player.position.X < position.X)
                 return true;
@@ -276,11 +303,7 @@ namespace Diploma2015.Entity
                             moves.Add(InputHandler.Movement.Right);
                         if (path.ElementAt(currentIndexInPath).NodePos.X < position.X)
                             moves.Add(InputHandler.Movement.Left);
-                        if (path.ElementAt(currentIndexInPath).fallNode == true)
-                        {
-//                            Console.WriteLine("It's a Fall Node ");
-                        }
-                        else
+                        if (path.ElementAt(currentIndexInPath).fallNode == false)
                         {
                             if (path.ElementAt(currentIndexInPath).NodePos.Y < position.Y)
                                 moves.Add(InputHandler.Movement.Jump);
@@ -313,8 +336,6 @@ namespace Diploma2015.Entity
             else
                 return currentEndNode;
         }
-
-
 
         //private bool thereIsPlatform(List<Platforms> platforms)
         //{
