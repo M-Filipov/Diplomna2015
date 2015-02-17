@@ -77,6 +77,7 @@ namespace Diploma2015.Entity
             handleMovement();
             base.Jump();
             base.Gravitation();
+            base.KillIfOutOfMap();
         }
 
         public void handleMovement()
@@ -90,9 +91,13 @@ namespace Diploma2015.Entity
                     continue;
                 }
                 if (move == InputHandler.Movement.Left)
+                {
                     position.X -= 5;
+                }
                 if (move == InputHandler.Movement.Right)
+                {
                     position.X += 5;
+                }
                 if (move == InputHandler.Movement.Jump && hasJumped == false && grounded)
                 {
                     velocity.Y = -30;
@@ -125,7 +130,8 @@ namespace Diploma2015.Entity
         public void AI(Player player, List<Platforms> platforms, GameTime gameTime)
         {
             bool passiveForTooLong = CheckIfPassiveForTooLong(gameTime);
-        
+            Console.WriteLine(" FARREST = " + FindFarrestNode(player).NodePos);
+
             ConsiderNpcState();
          
             switch (currentState)
@@ -172,10 +178,15 @@ namespace Diploma2015.Entity
                 currentStartNode = FindClosestNode(this.position, this.height);
                 //currentEndNode.NodePos = new Vector2(0, 0);
 
-                if(destNode == "farrestNode")
-                    currentEndNode = findFarrestNode();                             // run to the farrest part of the map
+                if (destNode == "farrestNode")
+                {
+                    currentEndNode = RandFindFarrestNode(player);                             // run to the farrest part of the map
+                    Console.WriteLine(currentEndNode.NodePos);
+                }
                 else
+                {
                     currentEndNode = FindClosestNode(player.position, player.height);
+                }
 
                 if ((currentEndNode.NodePos.X != 0 && currentEndNode.NodePos.Y != 0 && currentEndNode.NodePos != currentNodeOn.NodePos) ||
                     passiveForTooLong)
@@ -189,19 +200,77 @@ namespace Diploma2015.Entity
         }
 
 
-        private Node findFarrestNode()
+        private Node FindFarrestNode(Player player)
         {
-            Node farrestNode = new Node(new Vector2(0, 0));
-            
-            // TODO: find the farrest from player node 
+            Node farrestNode = Platforms.nodeList.ElementAt(1);
+            int playerOpposQuad = PlayersOppositeScreenQuad(player);
 
-
+            foreach (Node n in Platforms.nodeList)
+            {
+                switch (playerOpposQuad)
+                {
+                    case 1:
+                        if (n.NodePos.X > farrestNode.NodePos.X || n.NodePos.Y < farrestNode.NodePos.Y)
+                            farrestNode = n;
+                        break;
+                    case 2:
+                        if (n.NodePos.X < farrestNode.NodePos.X || n.NodePos.Y < farrestNode.NodePos.Y)
+                            farrestNode = n;
+                            break;
+                    case 3:
+                            if (n.NodePos.X < farrestNode.NodePos.X || n.NodePos.Y > farrestNode.NodePos.Y)
+                                farrestNode = n;
+                            break;
+                    case 4:
+                            if (n.NodePos.X > farrestNode.NodePos.X || n.NodePos.Y > farrestNode.NodePos.Y)
+                                farrestNode = n;
+                            break;
+                    default:
+                        break;
+                }
+            }
             return farrestNode;
+        }
+
+        public Node RandFindFarrestNode(Player player)
+        {
+            Random rand = new Random();
+            int randNodeInd = rand.Next(Platforms.nodeList.Count());
+            Node farrest = new Node(new Vector2(0, 0));
+            int currLongestPath = 0;
+            List<Node> currPath = new List<Node>();
+
+            for (int i = 0; i < 5; i++)
+            {
+                currPath = plat.Astar(FindClosestNode(player.position, player.height), Platforms.nodeList.ElementAt(randNodeInd));
+                if (currPath.Count > currLongestPath)
+                    farrest = Platforms.nodeList.ElementAt(randNodeInd);
+                randNodeInd = rand.Next(Platforms.nodeList.Count());
+            }
+            return farrest;
+        }
+
+        public int PlayersOppositeScreenQuad(Player player)    // screen - coord system - gives plyer's opposite one 1-3; 2-4
+        {
+            if(player.position.X > GameConsts.ScreenWidth / 2)
+            {
+                if (player.position.Y > GameConsts.ScreenHeight / 2)
+                    return 2;
+                else
+                    return 3;
+            }
+            else
+            {
+                if (player.position.Y > GameConsts.ScreenHeight / 2)
+                    return 1;
+                else
+                    return 4;
+            }
         }
 
         public void ConsiderNpcState()
         {
-            if (hp <= 15)
+            if (hp < 15)
             {
                 currentState = States.runningAway;
             }
@@ -247,8 +316,6 @@ namespace Diploma2015.Entity
                 // play melee atk anim left
                 // deal melee dmg on player
             }
-
-
         }
 
         private bool InMeleeRangeRight(Player player)

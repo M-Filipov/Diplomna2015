@@ -27,8 +27,10 @@ namespace Diploma2015.Entity
 
         public void LoadPlayerAnims(Animations playerAnim)
         {
-            playerAnim.AddAnimations(3, 0, 0, "walkLeft", 50, 50);
-            playerAnim.AddAnimations(3, 0, 1, "walkRight", 50, 50);
+//           playerAnim.AddAnimations(3, 0, 0, "walkLeft", 50, 50);
+//           playerAnim.AddAnimations(3, 0, 1, "walkRight", 50, 50);
+            playerAnim.AddAnimationsNew(4, 0, 170, "walkRight", 70, 70);
+            playerAnim.AddAnimationsNew(4, 0, 250, "walkLeft", 70, 70);
 
             playerAnim.PlayAnim("walkLeft");
         }
@@ -72,7 +74,8 @@ namespace Diploma2015.Entity
             if(!grounded)
                 playerAnim.PlayAnim("walkRight");
             base.Jump();
-            base.Gravitation();    
+            base.Gravitation();
+            base.KillIfOutOfMap();
         }
 
         public void UpdateAbils(Animations anim)
