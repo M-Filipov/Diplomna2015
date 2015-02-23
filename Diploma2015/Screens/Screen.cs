@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Diploma2015.Gui;
 using Microsoft.Xna.Framework.Input;
+using Diploma2015.GameLogic;
 
 namespace Diploma2015.Screens
 {
@@ -19,6 +20,9 @@ namespace Diploma2015.Screens
         public MouseState mouseState;
 
         protected Point cursorPosition;
+
+
+
         public virtual void Initialize()
         {
             cursorPosition = new Point(mouseState.X, mouseState.Y);
@@ -27,6 +31,9 @@ namespace Diploma2015.Screens
         {
             content = new ContentManager(ScreenManager.Instance.Content.ServiceProvider, "Content");
             cursorTex = content.Load<Texture2D>("assets/2d/gui/crs_arrow");
+
+            //soundEff.LoadContent();
+            //soundEff.AddSounds();
         }
         public virtual void UnloadContent()
         {

@@ -71,6 +71,7 @@
     <Compile Include="GameConsts.cs" />
     <Compile Include="GameLogic\InputHandler.cs" />
     <Compile Include="GameLogic\Node.cs" />
+    <Compile Include="GameLogic\SoundEffects.cs" />
     <Compile Include="Gui\SelectingImgs.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
@@ -173,6 +174,7 @@
     <Content Include="Content\assets\2d\gui\mysticBackground.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\assets\audio\backgroundSounds\WindBackgrSound.wav" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -196,9 +198,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\assets\audio\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Content\assets\Fonts\kenvector_future.ttf" />
   </ItemGroup>

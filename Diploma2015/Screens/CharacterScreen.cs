@@ -13,23 +13,23 @@ namespace Diploma2015.Screens
 {
     public class CharacterScreen : Screen
     {
-        Texture2D background, redPlayerTex, imgBackgroundSelectionTex, bronzeRobotTex;
-        SelectingImgs redPlayer, bluePlayer, greenPlayer, yellowPlayer, bronzeRobot;
+        Texture2D background, characterOneTex, imgBackgroundSelectionTex, characterFourTex;
+        SelectingImgs characterOne, characterTwo, characterThree, characterFour;
         public Rectangle imgBackgroundSelectionRect;
         public string currentSelectedPlayer;
         public GUIManager gManager;
 
         public override void Initialize()
         {
-            redPlayer = new SelectingImgs(150, 100, 150, 150, redPlayerTex, imgBackgroundSelectionTex);
-            bluePlayer = new SelectingImgs(350, 100, 150, 150, redPlayerTex, imgBackgroundSelectionTex);
-            greenPlayer = new SelectingImgs(550, 100, 150, 150, redPlayerTex, imgBackgroundSelectionTex);
-            bronzeRobot = new SelectingImgs(750, 100, 150, 150, bronzeRobotTex, imgBackgroundSelectionTex);
+            characterOne = new SelectingImgs(characterFourTex, 150, 100, 150, 150);
+            characterTwo = new SelectingImgs(characterOneTex, 350, 100, 150, 150);
+            characterThree = new SelectingImgs(characterFourTex, 550, 100, 150, 150);
+            characterFour = new SelectingImgs(characterFourTex, 750, 100, 150, 150);
 
-            redPlayer.selectingAnim.AddAnimations(3, 0, 0, "idle", 50, 50);
-            bluePlayer.selectingAnim.AddAnimations(3, 0, 0, "idle", 50, 50);
-            greenPlayer.selectingAnim.AddAnimations(3, 0, 0, "idle", 50, 50);
-            bronzeRobot.selectingAnim.AddAnimationsNew(5, 250, 80, "idle", 80, 80);
+            characterOne.selectingAnim.AddAnimations(5, 250, 80, "idle", 80, 80);
+            characterTwo.selectingAnim.AddAnimationsNew(5, 250, 80, "idle", 80, 80);
+            characterThree.selectingAnim.AddAnimationsNew(5, 250, 80, "idle", 80, 80);
+            characterFour.selectingAnim.AddAnimationsNew(5, 250, 80, "idle", 80, 80);
 
             base.Initialize();
         }
@@ -49,8 +49,8 @@ namespace Diploma2015.Screens
                 }
             }
 
-            redPlayerTex = content.Load<Texture2D>("assets/2d/characters/redPlayer");
-            bronzeRobotTex = content.Load<Texture2D>("assets/2d/characters/bronzeChar");
+            characterOneTex = content.Load<Texture2D>("assets/2d/characters/bronzeChar");
+            characterFourTex = content.Load<Texture2D>("assets/2d/characters/bronzeChar");
             background = content.Load<Texture2D>("assets/2d/gui/mysticBackground");
             imgBackgroundSelectionTex = content.Load<Texture2D>("assets/2d/gui/imgSelectingBackground");
         }
@@ -62,15 +62,15 @@ namespace Diploma2015.Screens
 
         public override void Update(GameTime gameTime)
         {
-//            redPlayer.selectingAnim.PlayAnim("idle");
+//            characterOne.selectingAnim.PlayAnim("idle");
             gManager.Update(mouseState);
             setSelected();
 
-            redPlayer.UpdateSelectingImgs("idle", mouseState);
-            bluePlayer.UpdateSelectingImgs("idle", mouseState);
-            greenPlayer.UpdateSelectingImgs("idle", mouseState);
+            characterOne.UpdateSelectingImgs("idle", mouseState);
+            characterTwo.UpdateSelectingImgs("idle", mouseState);
+            characterThree.UpdateSelectingImgs("idle", mouseState);
 
-            bronzeRobot.UpdateSelectingImgs("idle", mouseState);
+            characterFour.UpdateSelectingImgs("idle", mouseState);
 
             if (gManager.components[0].isMouseClicked)
             {
@@ -82,25 +82,25 @@ namespace Diploma2015.Screens
 
         public void setSelected()
         {
-            if (redPlayer.ifSelected(mouseState))
+            if (characterOne.ifSelected(mouseState))
             {
-                currentSelectedPlayer = "redPlayer";
-                setSelectionBackgroundPos(redPlayer);
+                currentSelectedPlayer = "characterOne";
+                setSelectionBackgroundPos(characterOne);
             }
-            if (bluePlayer.ifSelected(mouseState))
+            if (characterTwo.ifSelected(mouseState))
             {
-                currentSelectedPlayer = "bluePlayer";
-                setSelectionBackgroundPos(bluePlayer);
+                currentSelectedPlayer = "characterTwo";
+                setSelectionBackgroundPos(characterTwo);
             }
-            if (greenPlayer.ifSelected(mouseState))
+            if (characterThree.ifSelected(mouseState))
             {
-                currentSelectedPlayer = "greenPlayer";
-                setSelectionBackgroundPos(greenPlayer);
+                currentSelectedPlayer = "characterThree";
+                setSelectionBackgroundPos(characterThree);
             }
-            if (bronzeRobot.ifSelected(mouseState))
+            if (characterFour.ifSelected(mouseState))
             {
                 currentSelectedPlayer = "bronzeChar";
-                setSelectionBackgroundPos(bronzeRobot);
+                setSelectionBackgroundPos(characterFour);
             }
 
         }
@@ -118,10 +118,10 @@ namespace Diploma2015.Screens
 
             spriteBatch.Draw(background, new Rectangle(0, 0, GameConsts.ScreenWidth, GameConsts.ScreenHeight), Color.White);
 
-            redPlayer.selectingAnim.Draw(spriteBatch);
-            bluePlayer.selectingAnim.Draw(spriteBatch);
-            greenPlayer.selectingAnim.Draw(spriteBatch);
-            bronzeRobot.selectingAnim.Draw(spriteBatch);
+            characterOne.selectingAnim.Draw(spriteBatch);
+            characterTwo.selectingAnim.Draw(spriteBatch);
+            characterThree.selectingAnim.Draw(spriteBatch);
+            characterFour.selectingAnim.Draw(spriteBatch);
 
             spriteBatch.Draw(imgBackgroundSelectionTex, imgBackgroundSelectionRect, Color.White * 0.5f);
 

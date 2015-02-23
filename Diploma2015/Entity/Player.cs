@@ -35,24 +35,27 @@ namespace Diploma2015.Entity
             playerAnim.PlayAnim("walkLeft");
         }
 
-        public void Update(List<InputHandler.Movement> moves, Animations playerAnim, Texture2D fireBallSprite)
+        public void Update(List<InputHandler.Movement> moves, Animations playerAnim)
         {
-            playerAnim.destRect.X = (int)this.position.X;
-            playerAnim.destRect.Y = (int)this.position.Y;
-            playerAnim.destRect.Width = this.width;
-            playerAnim.destRect.Height = this.height;
+            HandleMovement(moves);
+            HandleAnims(moves, playerAnim);
 
-            foreach( InputHandler.Movement move in moves )
+            base.Jump();
+            base.Gravitation();
+            base.KillIfOutOfMap();
+        }
+
+        private void HandleMovement(List<InputHandler.Movement> moves)
+        {
+            foreach (InputHandler.Movement move in moves)
             {
                 if (move == InputHandler.Movement.Left)
                 {
-                    playerAnim.PlayAnim("walkLeft");
                     position.X -= GameConsts.PlayerSpeed;
                     characterDir = "left";
                 }
                 if (move == InputHandler.Movement.Right)
                 {
-                    playerAnim.PlayAnim("walkRight");
                     position.X += GameConsts.PlayerSpeed;
                     characterDir = "right";
                 }
@@ -62,20 +65,37 @@ namespace Diploma2015.Entity
                     base.grounded = false;
                     velocity.Y = -30;
                 }
-                if(move == InputHandler.Movement.AbilityOne && rangedAbility.Count < 1)
+            }
+        }
+
+        private void HandleAnims(List<InputHandler.Movement> moves, Animations playerAnim)
+        {
+            playerAnim.destRect.X = (int)this.position.X;
+            playerAnim.destRect.Y = (int)this.position.Y;
+            playerAnim.destRect.Width = this.width;
+            playerAnim.destRect.Height = this.height;
+            foreach (InputHandler.Movement move in moves)
+            {
+                if (move == InputHandler.Movement.Left)
                 {
-                    Animations newFireBallAnim = new Animations(fireBallSprite);
-                    FireBall ball = new FireBall(this.position.X, this.position.Y, 50, 50, this.characterDir, 10f, 7f);
-                    ball.LoadAnims(newFireBallAnim);
-                    abilityAnimations.Add(newFireBallAnim);
-                    rangedAbility.Add(ball);
+                    playerAnim.PlayAnim("walkLeft");
+                }
+                if (move == InputHandler.Movement.Right)
+                {
+                    playerAnim.PlayAnim("walkRight");
+                }
+                if (move == InputHandler.Movement.Jump && !hasJumped && grounded)
+                {
+                   
                 }
             }
-            if(!grounded)
+            if (!grounded)
                 playerAnim.PlayAnim("walkRight");
-            base.Jump();
-            base.Gravitation();
-            base.KillIfOutOfMap();
+ 
+        }
+
+        private void HandleSkills(List<InputHandler.Movement> moves)
+        {
         }
 
         public void UpdateAbils(Animations anim)

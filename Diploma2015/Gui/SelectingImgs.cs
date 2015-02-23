@@ -20,7 +20,7 @@ namespace Diploma2015.GameLogic
         Texture2D imgBackgrSelect;
         string oldLeftButtonState;
        
-        public SelectingImgs(int x, int y, int width, int height, Texture2D sprite, Texture2D selectTex)
+        public SelectingImgs(Texture2D sprite, int x, int y, int width, int height)
         {
             X = x;
             Y = y;
@@ -33,13 +33,6 @@ namespace Diploma2015.GameLogic
             selectingAnim.destRect.Width = width;
             selectingAnim.destRect.Height = height;
             selected = false;
-
-            imgBackgroundSelectionRect.X = (int)(x - x * 0.2f);
-            imgBackgroundSelectionRect.Y = (int)(y - y * 0.2f);
-            imgBackgroundSelectionRect.Width = (int)(width + width * 0.4f);
-            imgBackgroundSelectionRect.Height= (int)(height + height * 0.4f);
-            imgBackgrSelect = selectTex;
-            oldLeftButtonState = "released";
         }
          
         public SelectingImgs(int x, int y, int width, int height, Texture2D sprite)

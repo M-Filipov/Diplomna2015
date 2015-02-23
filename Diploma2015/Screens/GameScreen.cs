@@ -35,7 +35,7 @@ namespace Diploma2015.Screens
 
             for (int i = 0; i < 2; i++)
             {
-                NPC npc = new NPC(new Vector2( (i + 1) * 200, 520), GameConsts.Npc1W, GameConsts.Npc1H, 100, 40, 200);
+                NPC npc = new NPC(new Vector2( (i + 1) * 200, 520), GameConsts.Npc1W, GameConsts.Npc1H, 100, 40, 200, 5);
                 NpcList.Add(npc);
             }
         }
@@ -63,7 +63,7 @@ namespace Diploma2015.Screens
             List<InputHandler.Movement> moves = InputHandler.getInput();
             Collision.coll(player, platforms);
 
-            player.Update(moves, playerAnim, fireBallSprite);
+            player.Update(moves, playerAnim);
 
             for (int i = 0; i < player.abilityAnimations.Count; i++ )
             {            
