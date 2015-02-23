@@ -16,6 +16,7 @@ namespace Diploma2015.GameLogic
         public Rectangle destRect;
         public int totalFrames;
 
+
         public Dictionary<string, List<Rectangle>> spriteAnimations = new Dictionary<string,List<Rectangle>>();
  
         public Animations(Texture2D sprite)
@@ -37,6 +38,20 @@ namespace Diploma2015.GameLogic
 
             spriteAnimations.Add(name, anims);            
         }
+
+        public void AddAnimationsNew(int frames, int xStartPos, int yStartPos, string name, int width, int height)
+        {
+            totalFrames = frames;
+            List<Rectangle> anims = new List<Rectangle>();
+            for (int i = 0; i < totalFrames; i++)
+            {
+                Rectangle anim = new Rectangle(i * width + xStartPos, yStartPos, width, height);
+                anims.Add(anim);
+            }
+
+            spriteAnimations.Add(name, anims);
+        }
+
 
         public void PlayAnim(string name)
         {

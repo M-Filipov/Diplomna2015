@@ -27,8 +27,10 @@ namespace Diploma2015.Entity
 
         public void LoadPlayerAnims(Animations playerAnim)
         {
-            playerAnim.AddAnimations(3, 0, 0, "walkLeft", 50, 50);
-            playerAnim.AddAnimations(3, 0, 1, "walkRight", 50, 50);
+//           playerAnim.AddAnimations(3, 0, 0, "walkLeft", 50, 50);
+//           playerAnim.AddAnimations(3, 0, 1, "walkRight", 50, 50);
+            playerAnim.AddAnimationsNew(4, 0, 170, "walkRight", 70, 70);
+            playerAnim.AddAnimationsNew(4, 0, 250, "walkLeft", 70, 70);
 
             playerAnim.PlayAnim("walkLeft");
         }
@@ -40,18 +42,7 @@ namespace Diploma2015.Entity
             playerAnim.destRect.Width = this.width;
             playerAnim.destRect.Height = this.height;
 
-            MovePlayerAndPlayAnims(moves, playerAnim, fireBallSprite);
-       
-            if(!grounded)
-                playerAnim.PlayAnim("walkRight");
-            base.Jump();
-            base.Gravitation();
-            base.IfOutOfMap();
-        }
-
-        public void MovePlayerAndPlayAnims(List<InputHandler.Movement> moves, Animations playerAnim, Texture2D fireBallSprite)
-        {
-            foreach (InputHandler.Movement move in moves)
+            foreach( InputHandler.Movement move in moves )
             {
                 if (move == InputHandler.Movement.Left)
                 {
@@ -71,7 +62,7 @@ namespace Diploma2015.Entity
                     base.grounded = false;
                     velocity.Y = -30;
                 }
-                if (move == InputHandler.Movement.AbilityOne && rangedAbility.Count < 1)
+                if(move == InputHandler.Movement.AbilityOne && rangedAbility.Count < 1)
                 {
                     Animations newFireBallAnim = new Animations(fireBallSprite);
                     FireBall ball = new FireBall(this.position.X, this.position.Y, 50, 50, this.characterDir, 10f, 7f);
@@ -80,8 +71,11 @@ namespace Diploma2015.Entity
                     rangedAbility.Add(ball);
                 }
             }
-        
-        
+            if(!grounded)
+                playerAnim.PlayAnim("walkRight");
+            base.Jump();
+            base.Gravitation();
+            base.KillIfOutOfMap();
         }
 
         public void UpdateAbils(Animations anim)
@@ -106,8 +100,15 @@ namespace Diploma2015.Entity
                         anim.destRect.Height = rangedAbility.ElementAt(i).height;
                         anim.PlayAnim("rightFireBall");
                     }
-                }                
+                }
+
+                
             }
+        }
+
+        public void fall()
+        {
+            base.Gravitation();
         }
 
         public void drawPlayer(SpriteBatch spriteBatch)

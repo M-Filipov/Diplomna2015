@@ -41,6 +41,15 @@ namespace Diploma2015.GameLogic
             imgBackgrSelect = selectTex;
             oldLeftButtonState = "released";
         }
+         
+        public SelectingImgs(int x, int y, int width, int height, Texture2D sprite)
+        {
+            this.X = x;
+            this.Y = y;
+            this.Width = width;
+            this.Height = height;
+            this.selectingSprite = sprite;
+        }
 
         public void LoadSelectingImgs()
         {
@@ -73,8 +82,10 @@ namespace Diploma2015.GameLogic
 
         public void DrawSelectingImgs(SpriteBatch spriteBatch)
         {
-            if (this.selected)
-                spriteBatch.Draw(imgBackgrSelect, imgBackgroundSelectionRect, Color.White * 0.5f);
+            spriteBatch.Draw(this.selectingSprite, new Rectangle(X, Y, Width, Height), Color.White);
+
+//            if (this.selected)
+//                spriteBatch.Draw(imgBackgrSelect, imgBackgroundSelectionRect, Color.White * 0.5f);
         }
         
 
