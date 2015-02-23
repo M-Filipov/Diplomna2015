@@ -38,9 +38,9 @@ namespace Diploma2015.Entity
                 energy = 100;
         }
 
-        public virtual void KillIfOutOfMap()
+        public virtual void IfOutOfMap()
         {
-            if(this.position.X < 0 - 100 ||
+            if (this.position.X < 0 - 100 ||
                 this.position.X > GameConsts.ScreenWidth + 100 ||
                 this.position.Y > GameConsts.ScreenHeight)
             {
@@ -51,9 +51,9 @@ namespace Diploma2015.Entity
         public void Kill()
         {
             this.position.X = 400;
-            this.position.Y = 400;
+            this.position.Y= 400;
 
-            hp = 0;
+            this.hp = 0;
         }
 
         public virtual void Jump()
@@ -61,6 +61,7 @@ namespace Diploma2015.Entity
             if (hasJumped == true)
             {
                 position.Y += velocity.Y ;
+
                 velocity.Y += 1;
             }
            

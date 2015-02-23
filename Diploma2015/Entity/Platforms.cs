@@ -29,26 +29,15 @@ namespace Diploma2015.Entity
         {
             switch (mapName)
             {
-                case "forest":
-                    platforms.Add(new Platforms(50, GameConsts.ScreenHeight - GameConsts.ScreenHeight + 200, 300, platformH));
-                    platforms.Add(new Platforms(200, 400, 250, platformH));
-                    platforms.Add(new Platforms(650, 400, 200, platformH));
-                    platforms.Add(new Platforms(300, 550, 400, platformH));
-                    break;
-                case "snow":
+                case "Dust":
                     platforms.Add(new Platforms(50, GameConsts.ScreenHeight-50, GameConsts.ScreenWidth - 100, platformH));
-                    platforms.Add(new Platforms(200, 400, 600, platformH));
-                    platforms.Add(new Platforms(700, 200, 200, platformH));
-                    platforms.Add(new Platforms(300, 200, 200, platformH));
+                    platforms.Add(new Platforms(200, 400, 250, platformH));
+                    platforms.Add(new Platforms(700, 400, 200, platformH));
+                    platforms.Add(new Platforms(300, 200, 400, platformH));
                     break;
-                case "mountains":
-                    platforms.Add(new Platforms(50, GameConsts.ScreenHeight - 50, 600, platformH));
-                    platforms.Add(new Platforms(150, 400, 350, platformH));
-                    platforms.Add(new Platforms(400, 280, 250, platformH));
-                    platforms.Add(new Platforms(600, 150, 100, platformH));
-                    break;
-                case "city":
-                    platforms.Add(new Platforms(50, GameConsts.ScreenHeight - 50, GameConsts.ScreenWidth - 100, platformH));
+
+                case "Haha":
+                    platforms.Add(new Platforms(50, GameConsts.ScreenHeight-50, GameConsts.ScreenWidth - 100, platformH));
                     platforms.Add(new Platforms(200, 400, 600, platformH));
                     platforms.Add(new Platforms(700, 200, 200, platformH));
                     platforms.Add(new Platforms(300, 200, 200, platformH));
@@ -148,37 +137,34 @@ namespace Diploma2015.Entity
             Node currentNode = nodeList.Find(node => node.NodePos == start.NodePos); // new Node(new Vector2(start.NodePos.X, start.NodePos.Y), nodeTex);
             Node minCostNode = new Node(new Vector2(0, 0));
 
-            if (currentNode.NodePos.X > 0 && end != null)
+            while (currentNode.NodePos != end.NodePos)
             {
-                while (currentNode.NodePos != end.NodePos)
-                {
-                    bugFlag++;
+                bugFlag++;
                     minCostNode.H = 10000;
                     if (bugFlag > 100)
                         break;
-                    for (int i = 0; i < currentNode.connectors.Count; i++)
+                for(int i = 0; i < currentNode.connectors.Count; i++)
+                {
+                    bool inClosed = false;
+                    foreach (Node p in path)
                     {
-                        bool inClosed = false;
-                        foreach (Node p in path)
+                        if (p.NodePos == currentNode.connectors.ElementAt(i).NodePos)
                         {
-                            if (p.NodePos == currentNode.connectors.ElementAt(i).NodePos)
-                            {
-                                inClosed = true;
-                                break;
-                            }
-                        }
-                        if (!inClosed)
-                        {
-                            currentNode.connectors.ElementAt(i).getH(end);
-                            if (minCostNode.H >= currentNode.connectors.ElementAt(i).H)
-                                minCostNode = currentNode.connectors.ElementAt(i);
+                            inClosed = true;
+                            break;
                         }
                     }
-                    if (minCostNode != currentNode)
+                    if (!inClosed)
                     {
-                        path.Add(minCostNode);
-                        currentNode = nodeList.Find(node => node.NodePos == minCostNode.NodePos);
+                        currentNode.connectors.ElementAt(i).getH(end);
+                        if (minCostNode.H >= currentNode.connectors.ElementAt(i).H)
+                            minCostNode = currentNode.connectors.ElementAt(i);
                     }
+                }
+                if (minCostNode != currentNode)
+                {
+                    path.Add(minCostNode);
+                    currentNode = nodeList.Find(node => node.NodePos == minCostNode.NodePos); 
                 }
             }
             return path;

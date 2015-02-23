@@ -8,7 +8,6 @@ namespace Diploma2015
     public class GameConsts
     {
         public static string chosenPlayer;
-        public static string chosenMap;
 
         public const int ScreenWidth = 1024;
         public const int ScreenHeight = 600;

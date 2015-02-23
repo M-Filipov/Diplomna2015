@@ -67,7 +67,7 @@ namespace Diploma2015.Screens
 
             if (gManager.components[0].isMouseClicked)
             {
-                ScreenManager.Instance.ChangeToScreen(new MapScreen());
+                ScreenManager.Instance.ChangeToScreen(new CharacterScreen());
             }
             else if (gManager.components[1].isMouseClicked)
             {

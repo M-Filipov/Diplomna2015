@@ -14,7 +14,7 @@ namespace Diploma2015.Screens
     {
         Texture2D playerSprite, background, groundTex, npc1Sprite, nodeTex, playerTex, fireBallTex, fireBallSprite;
         Player player;
-        List<NPC> NpcList = new List<NPC>();
+        NPC npc1;
         Animations playerAnim, npc1Anim, fireBallAnim;
         List<Platforms> platforms;
         Platforms pl = new Platforms(0,0,0,0);
@@ -28,16 +28,12 @@ namespace Diploma2015.Screens
             playerAnim = new Animations(playerSprite);
 
             nodeTex = content.Load<Texture2D>("assets/2d/nodeTex");
-            pl.initPlatforms(platforms, GameConsts.chosenMap);
+            pl.initPlatforms(platforms, "Haha");
             pl.CreateNodes(platforms, nodeTex);
 
             player.LoadPlayerAnims(playerAnim);
-
-            for (int i = 0; i < 2; i++)
-            {
-                NPC npc = new NPC(new Vector2( (i + 1) * 200, 520), GameConsts.Npc1W, GameConsts.Npc1H, 100, 40, 200);
-                NpcList.Add(npc);
-            }
+            
+            npc1 = new NPC(new Vector2(250, 520), GameConsts.Npc1W, GameConsts.Npc1H, 100, 40, 200);
         }
 
         public override void LoadContent()
@@ -45,7 +41,7 @@ namespace Diploma2015.Screens
             base.LoadContent();
             //player.objTexture = content.Load<Texture2D>("GameScreen/player");
             playerSprite = content.Load<Texture2D>("assets/2d/characters/" + GameConsts.chosenPlayer);
-            background = content.Load<Texture2D>("assets/2d/terrain/" + GameConsts.chosenMap);
+            background = content.Load<Texture2D>("assets/2d/terrain/Dust");
             groundTex = content.Load<Texture2D>("assets/2d/terrain/platform");
             npc1Sprite = content.Load<Texture2D>("assets/2d/characters/npc1");
             playerTex = content.Load<Texture2D>("assets/2d/characters/npc1");
@@ -70,21 +66,22 @@ namespace Diploma2015.Screens
                 player.UpdateAbils(player.abilityAnimations.ElementAt(i));
             }
 
-            foreach (NPC npc in NpcList)
+            foreach (Animations anim in player.abilityAnimations)
             {
-                npc.AI(player, platforms, gameTime);
-                npc.Update(gameTime);
-                Collision.coll(npc, platforms);
             }
+           // playerAnim.animUpdate();
+
+            npc1.AI(player, platforms, gameTime);
+            npc1.Update(gameTime);
+            Collision.coll(npc1, platforms);
+            
             base.Update(gameTime);
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(background, new Rectangle(0, 0, GameConsts.ScreenWidth, GameConsts.ScreenHeight), Color.White);
-            foreach (NPC npc in NpcList)
-            {
-                spriteBatch.Draw(npc1Sprite, new Rectangle((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height), Color.White);
-            }
+            spriteBatch.Draw(npc1Sprite, new Rectangle((int)npc1.position.X, (int)npc1.position.Y, npc1.width, npc1.height), Color.White);
+
             playerAnim.Draw(spriteBatch);
 
             foreach (Animations a in player.abilityAnimations)
