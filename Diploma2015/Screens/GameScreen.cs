@@ -16,21 +16,21 @@ namespace Diploma2015.Screens
         Player player;
         List<NPC> NpcList = new List<NPC>();
         Animations playerAnim, npc1Anim, fireBallAnim;
-        List<Platforms> platforms;
+        List<Platforms> platforms = new List<Platforms>();
         Platforms pl = new Platforms(0,0,0,0);
 
         public override void Initialize()
         {
             base.Initialize();
             player = new Player(new Vector2(630, 470), GameConsts.PlayerWidth, GameConsts.PlayerHeight);
-            platforms = new List<Platforms>();
 
-            playerAnim = new Animations(playerSprite);
+            InitPlatforms(platforms, GameConsts.chosenMap);
+
+            playerAnim = new Animations(playerSprite, 5);
 
             nodeTex = content.Load<Texture2D>("assets/2d/nodeTex");
-            pl.initPlatforms(platforms, GameConsts.chosenMap);
-            pl.CreateNodes(platforms, nodeTex);
 
+            Astar.CreateNodes(platforms, nodeTex);
             player.LoadPlayerAnims(playerAnim);
 
             for (int i = 0; i < 2; i++)
@@ -104,5 +104,47 @@ namespace Diploma2015.Screens
             base.Draw(spriteBatch);
         }
 
+
+
+        public void InitPlatforms(List<Platforms> platforms, string mapName)
+        {
+            int platformH = 15;
+            switch (mapName)
+            {
+                case "forest":
+                    platforms.Add(new Platforms(50, GameConsts.ScreenHeight - GameConsts.ScreenHeight + 200, 300, platformH));
+                    platforms.Add(new Platforms(200, 400, 250, platformH));
+                    platforms.Add(new Platforms(650, 400, 200, platformH));
+                    platforms.Add(new Platforms(300, 550, 400, platformH));
+                    break;
+                case "snow":
+                    platforms.Add(new Platforms(50, GameConsts.ScreenHeight - 50, GameConsts.ScreenWidth - 100, platformH));
+                    platforms.Add(new Platforms(200, 400, 600, platformH));
+                    platforms.Add(new Platforms(700, 200, 200, platformH));
+                    platforms.Add(new Platforms(300, 200, 200, platformH));
+                    break;
+                case "mountains":
+                    platforms.Add(new Platforms(50, GameConsts.ScreenHeight - 50, 600, platformH));
+                    platforms.Add(new Platforms(150, 400, 350, platformH));
+                    platforms.Add(new Platforms(400, 280, 250, platformH));
+                    platforms.Add(new Platforms(600, 150, 100, platformH));
+                    break;
+                case "city":
+                    platforms.Add(new Platforms(50, GameConsts.ScreenHeight - 50, GameConsts.ScreenWidth - 100, platformH));
+                    platforms.Add(new Platforms(200, 400, 600, platformH));
+                    platforms.Add(new Platforms(700, 200, 200, platformH));
+                    platforms.Add(new Platforms(300, 200, 200, platformH));
+                    break;
+
+
+                //...     case "":
+
+            }
+        }
+
+
     }
+
+
+
 }

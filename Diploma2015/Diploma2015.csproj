@@ -67,6 +67,7 @@
     <Compile Include="Entity\Projectile.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameLogic\Animations.cs" />
+    <Compile Include="GameLogic\Astar.cs" />
     <Compile Include="GameLogic\Collision.cs" />
     <Compile Include="GameConsts.cs" />
     <Compile Include="GameLogic\InputHandler.cs" />

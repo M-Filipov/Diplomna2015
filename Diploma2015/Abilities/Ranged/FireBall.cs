@@ -32,7 +32,7 @@ namespace Diploma2015.Abilities
 
         public override void LoadAnims(Animations anim)
         {
-            anim.AddAnimations(12, 0, 0, "rightFireBall", 60, 60);
+            //anim.AddAnimation(12, 0, 0, "rightFireBall", 60, 60);
         }
 
 

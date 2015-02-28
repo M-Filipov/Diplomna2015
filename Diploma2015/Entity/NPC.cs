@@ -123,11 +123,11 @@ namespace Diploma2015.Entity
 
                     break;
                 case States.runningAway:
-                    IfEndReachedOrPassiveCleanOldPathCallAStar(player, passiveForTooLong, "farrestNode");
+                    IfEndReachedOrPassiveCleanOldPathCallAStar(player, passiveForTooLong);
 
                     break;
                 case States.following:
-                    IfEndReachedOrPassiveCleanOldPathCallAStar(player, passiveForTooLong, "playerNode");
+                    IfEndReachedOrPassiveCleanOldPathCallAStar(player, passiveForTooLong);
                     break;
             }
 
@@ -141,15 +141,13 @@ namespace Diploma2015.Entity
             //CallChasePlayerEveryXSeconds(player, road, gameTime);
         }
 
-        private void IfEndReachedOrPassiveCleanOldPathCallAStar(Player player, bool passiveForTooLong, string destNode)
+        private void IfEndReachedOrPassiveCleanOldPathCallAStar(Player player, bool passiveForTooLong)
         {
             if ( IfEndNodeReached() || passiveForTooLong)
             {
                 currentStartNode = FindClosestNode(this.position, this.height);
-                if (destNode == "farrestNode")
-                    currentEndNode = RandFindFarrestNode(player);                             // run to the farrest part of the map
-                else
-                    currentEndNode = FindClosestNode(player.position, player.height);
+
+                ConsiderNpcDest(player);
 
                 if ((currentEndNode.NodePos.X != 0 && currentEndNode.NodePos.Y != 0 && !IfEndNodeReached()) ||
                     passiveForTooLong)
@@ -160,9 +158,23 @@ namespace Diploma2015.Entity
             }
         }
 
+        private void ConsiderNpcDest(Player player)               // Considers the end node for the pathfinding;  if hp - low => furthest node; ELSE  If Level difficulty = easy  ||  hard
+        {                                                         
+            if (currentState == States.runningAway)                                
+                currentEndNode = FindFurthestNodeRand(player);
+            else                                                                              // IF NPC's HP is low =>
+                if (GameConsts.Difficulty == "easy")                                          // run to the farrest part of the map
+                    currentEndNode = FindNodeInPlayerRange(player, 5);                                  
+                else
+                {
+                    currentEndNode = FindClosestNode(player.position, player.height);
+                }
+            //currentEndNode = FindClosestNode(player.position, player.height);
+        }
+
         public void ConsiderNpcState()
         {
-            if (hp < 15)
+            if (hp > 15)
             {
                 currentState = States.runningAway;
             }
@@ -293,23 +305,40 @@ namespace Diploma2015.Entity
             return farrestNode;
         }
 
-        public Node RandFindFarrestNode(Player player)
+        //public Node RandFindFarrestNode(Player player)
+        //{
+        //    Random rand = new Random();
+        //    int randNodeInd = rand.Next(Platforms.nodeList.Count());
+        //    Node farrest = new Node(new Vector2(0, 0));
+        //    int currLongestPath = 0;
+        //    List<Node> currPath = new List<Node>();
+
+           
+        //}
+
+        private Node FindFurthestNodeRand(Player player)
         {
             Random rand = new Random();
-            int randNodeInd = rand.Next(Platforms.nodeList.Count());
-            Node farrest = new Node(new Vector2(0, 0));
-            int currLongestPath = 0;
-            List<Node> currPath = new List<Node>();
-
-            for (int i = 0; i < 5; i++)
+            int index = rand.Next(Platforms.nodeList.Count);
+            while (Platforms.nodeList.ElementAt(index).NodePos.Y == FindClosestNode(player.position, player.height).NodePos.Y &&
+                        Platforms.nodeList.ElementAt(index).fallNode == false)
             {
-                currPath = plat.Astar(FindClosestNode(player.position, player.height), Platforms.nodeList.ElementAt(randNodeInd));
-                if (currPath.Count > currLongestPath)
-                    farrest = Platforms.nodeList.ElementAt(randNodeInd);
-                randNodeInd = rand.Next(Platforms.nodeList.Count());
+                index = rand.Next(1, Platforms.nodeList.Count - 1);
             }
-            return farrest;
+            return Platforms.nodeList.ElementAt(index);
         }
+
+        public Node FindNodeInPlayerRange(Player player, int range)
+        {
+            Random rand = new Random();
+            var playersNodeInd = Platforms.nodeList.FindIndex(node => node.NodePos == FindClosestNode(player.position, player.height).NodePos);
+            int randNodeInd = rand.Next(playersNodeInd - range, playersNodeInd + range);
+            while (randNodeInd < 0 || randNodeInd >= Platforms.nodeList.Count)
+                randNodeInd = rand.Next(playersNodeInd - range, playersNodeInd + range);
+
+            return Platforms.nodeList.ElementAt(randNodeInd);
+        }
+
 
         private bool CheckIfPassiveForTooLong(GameTime gameTime, int seconds)
         {
@@ -396,7 +425,7 @@ namespace Diploma2015.Entity
         {
             currentIndexInPath = 0;
             road = new List<Node>();
-            road = plat.Astar(currentStartNode, currentEndNode);
+            road = Astar.PathFind(currentStartNode, currentEndNode);
         }
 
     }

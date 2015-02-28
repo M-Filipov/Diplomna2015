@@ -26,10 +26,10 @@ namespace Diploma2015.Screens
             characterThree = new SelectingImgs(characterFourTex, 550, 100, 150, 150);
             characterFour = new SelectingImgs(characterFourTex, 750, 100, 150, 150);
 
-            characterOne.selectingAnim.AddAnimations(5, 250, 80, "idle", 80, 80);
-            characterTwo.selectingAnim.AddAnimationsNew(5, 250, 80, "idle", 80, 80);
-            characterThree.selectingAnim.AddAnimationsNew(5, 250, 80, "idle", 80, 80);
-            characterFour.selectingAnim.AddAnimationsNew(5, 250, 80, "idle", 80, 80);
+            characterOne.selectingAnim.AddAnimation(5, 250, 80, "idle", 80, 80);
+            characterTwo.selectingAnim.AddAnimation(5, 250, 80, "idle", 80, 80);
+            characterThree.selectingAnim.AddAnimation(5, 250, 80, "idle", 80, 80);
+            characterFour.selectingAnim.AddAnimation(5, 250, 80, "idle", 80, 80);
 
             base.Initialize();
         }
@@ -62,14 +62,12 @@ namespace Diploma2015.Screens
 
         public override void Update(GameTime gameTime)
         {
-//            characterOne.selectingAnim.PlayAnim("idle");
             gManager.Update(mouseState);
             setSelected();
 
             characterOne.UpdateSelectingImgs("idle", mouseState);
             characterTwo.UpdateSelectingImgs("idle", mouseState);
             characterThree.UpdateSelectingImgs("idle", mouseState);
-
             characterFour.UpdateSelectingImgs("idle", mouseState);
 
             if (gManager.components[0].isMouseClicked)

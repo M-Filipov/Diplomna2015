@@ -7,6 +7,8 @@ namespace Diploma2015
 {
     public class GameConsts
     {
+        public static string Difficulty = "hard";
+
         public static string chosenPlayer;
         public static string chosenMap;
 

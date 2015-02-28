@@ -12,34 +12,22 @@ namespace Diploma2015.GameLogic
         private Texture2D texture { get; set; }
         public int currentFrame;
         private int animPerS;
+        private int count;
         public Rectangle frameToDraw;
         public Rectangle destRect;
         public int totalFrames;
 
-
         public Dictionary<string, List<Rectangle>> spriteAnimations = new Dictionary<string,List<Rectangle>>();
  
-        public Animations(Texture2D sprite)
+        public Animations(Texture2D sprite, int perSec)
         {
             texture = sprite;
             currentFrame = 0;
-            animPerS = 0;
+            animPerS = perSec;
+            count = 0;
         }
 
-        public void AddAnimations(int frames, int xStartFrame, int yStartFrame, string name, int width, int height)
-        {
-            totalFrames = frames;
-            List<Rectangle> anims = new List<Rectangle>();
-            for(int i = 0; i < totalFrames; i++)
-            {
-                Rectangle anim = new Rectangle((xStartFrame + i) * width, yStartFrame * height, width, height);
-                anims.Add(anim);
-            }
-
-            spriteAnimations.Add(name, anims);            
-        }
-
-        public void AddAnimationsNew(int frames, int xStartPos, int yStartPos, string name, int width, int height)
+        public void AddAnimation(int frames, int xStartPos, int yStartPos, string name, int width, int height)
         {
             totalFrames = frames;
             List<Rectangle> anims = new List<Rectangle>();
@@ -53,22 +41,33 @@ namespace Diploma2015.GameLogic
         }
 
 
+        //public void AddAnimationNew(int frames, int xStartFrame, int yStartFrame, string name, int width, int height)
+        //{
+        //    totalFrames = frames;
+        //    List<Rectangle> anims = new List<Rectangle>();
+        //    for(int i = 0; i < totalFrames; i++)
+        //    {
+        //        Rectangle anim = new Rectangle((xStartFrame + i) * width, yStartFrame * height, width, height);
+        //        anims.Add(anim);
+        //    }
+        //    spriteAnimations.Add(name, anims);            
+        //}
+
         public void PlayAnim(string name)
         {
             if(spriteAnimations.ContainsKey(name))
             {
                 if (currentFrame >= spriteAnimations[name].Count)
                     currentFrame = 0;
-                if (animPerS <= 5)
-                    animPerS++;
+                if ( count <= this.animPerS)
+                    count++;
                 else
                 {
                     frameToDraw = spriteAnimations[name].ElementAt(currentFrame);
                     currentFrame++;
-                    animPerS = 0;
+                    count = 0;
                 }
             }
-
         }
 
         public void Draw(SpriteBatch spriteBatch)

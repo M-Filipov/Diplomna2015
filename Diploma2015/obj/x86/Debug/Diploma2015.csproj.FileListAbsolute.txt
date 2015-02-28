@@ -139,8 +139,6 @@ C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\SharpD
 C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\SharpDX.RawInput.xml
 C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\obj\x86\Debug\Diploma2015.csprojResolveAssemblyReference.cache
-C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\MonoGame.Framework.dll
-C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\MonoGame.Framework.xml
 C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\obj\x86\Debug\Diploma2015.exe
 C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\obj\x86\Debug\Diploma2015.pdb
 C:\Users\Nick\Documents\Visual Studio 2012\Projects\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\blue_circle_in.png
@@ -238,3 +236,18 @@ C:\Users\Administrator\Desktop\Diplomna2015\Diploma2015\bin\Windows\Debug\Conten
 C:\Users\Administrator\Desktop\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\terrain\mountains.png
 C:\Users\Administrator\Desktop\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\terrain\snow.png
 C:\Users\Administrator\Desktop\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\characters\bronzeChar.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\nodeTex.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\abilities\fireBall.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\abilities\fireBallAnim.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\characters\bronzeChar.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\characters\firePlayer.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\characters\redPlayer.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\characters\whitePlayer.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\terrain\city.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\terrain\forest.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\imgSelectingBackground.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\terrain\mountains.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\terrain\snow.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Gui\SelectingImgs.cs
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Lidgren.Network.dll
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\MonoGame.Framework.dll

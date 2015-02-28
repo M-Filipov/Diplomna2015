@@ -17,8 +17,8 @@ namespace Diploma2015.GameLogic
         public Texture2D selectingSprite;
         public bool selected;
         public Rectangle imgBackgroundSelectionRect;
-        Texture2D imgBackgrSelect;
-        string oldLeftButtonState;
+        //Texture2D imgBackgrSelect;
+        //string oldLeftButtonState;
        
         public SelectingImgs(Texture2D sprite, int x, int y, int width, int height)
         {
@@ -27,7 +27,7 @@ namespace Diploma2015.GameLogic
             Width = width;
             Height = height;
             selectingSprite = sprite;
-            selectingAnim = new Animations(selectingSprite);
+            selectingAnim = new Animations(selectingSprite, 3);
             selectingAnim.destRect.X = x;
             selectingAnim.destRect.Y = y;
             selectingAnim.destRect.Width = width;
@@ -70,15 +70,12 @@ namespace Diploma2015.GameLogic
         {
             base.Update();
             selectingAnim.PlayAnim(animName);
-//            SetSelected(mouseState);
+            //SetSelected(mouseState);
         }
 
         public void DrawSelectingImgs(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(this.selectingSprite, new Rectangle(X, Y, Width, Height), Color.White);
-
-//            if (this.selected)
-//                spriteBatch.Draw(imgBackgrSelect, imgBackgroundSelectionRect, Color.White * 0.5f);
         }
         
 
