@@ -56,22 +56,6 @@ namespace Diploma2015.Entity
             checkX = position.X;
         }
 
-        //public NPC(Node nodeOn, int w, int h, int hp, int meleeR, int magicR)
-        //{
-        //    base.position.X = nodeOn.NodePos.X;
-        //    base.position.Y = nodeOn.NodePos.Y;
-        //    base.velocity.Y = 10;
-        //    base.width = width;
-        //    base.height = height;
-
-        //    base.hp = hp;
-        //    base.meleeRange = meleeR;
-        //    base.magicRange = magicR;
-        //    base.currentNodeOn = nodeOn;
-        //    currentStartNode = currentNodeOn;
-        //    currentEndNode = currentStartNode;
-
-        //}
 
         public void Update(GameTime gameTime)
         {
@@ -107,27 +91,22 @@ namespace Diploma2015.Entity
         public void AI(Player player, List<Platforms> platforms, GameTime gameTime)
         {
             bool passiveForTooLong = CheckIfPassiveForTooLong(gameTime, 10);
-            Console.WriteLine(" FARREST = " + FindFarrestNode(player).NodePos);
 
-            ConsiderNpcState();
+            ConsiderNpcState(player);
             
             switch (currentState)
             {
                 case States.meleeAttacking:
-                    if (InMeleeRange(player))
-                    {
-                        meleeAttackPlayer(player);
-                    }
+                    meleeAttackPlayer(player);
                     break;
                 case States.rangeAttacking:
-
+                    
                     break;
                 case States.runningAway:
-                    IfEndReachedOrPassiveCleanOldPathCallAStar(player, passiveForTooLong);
-
+                    HandleDestination(player, passiveForTooLong, gameTime);
                     break;
                 case States.following:
-                    IfEndReachedOrPassiveCleanOldPathCallAStar(player, passiveForTooLong);
+                    HandleDestination(player, passiveForTooLong, gameTime);
                     break;
             }
 
@@ -141,51 +120,69 @@ namespace Diploma2015.Entity
             //CallChasePlayerEveryXSeconds(player, road, gameTime);
         }
 
-        private void IfEndReachedOrPassiveCleanOldPathCallAStar(Player player, bool passiveForTooLong)
+        private void HandleDestination(Player player, bool passiveForTooLong, GameTime gameTime)    //IfEndReachedOrPassiveCleanOldPathCallAStar
         {
             if ( IfEndNodeReached() || passiveForTooLong)
             {
                 currentStartNode = FindClosestNode(this.position, this.height);
 
-                ConsiderNpcDest(player);
+                ConsiderNpcDest(player, gameTime);
 
                 if ((currentEndNode.NodePos.X != 0 && currentEndNode.NodePos.Y != 0 && !IfEndNodeReached()) ||
                     passiveForTooLong)
                 {
-                    //currentEndNode = FindClosestNode(player.position, player.height);
                     CleanOldPathCallAstar();
                 }
             }
         }
 
-        private void ConsiderNpcDest(Player player)               // Considers the end node for the pathfinding;  if hp - low => furthest node; ELSE  If Level difficulty = easy  ||  hard
-        {                                                         
-            if (currentState == States.runningAway)                                
+        private void ConsiderNpcDest(Player player, GameTime gameTime)               // Considers the end node for the pathfinding;  if hp - low => furthest node; ELSE  If Level difficulty = easy  ||  hard
+        {
+            if (currentState == States.runningAway)
                 currentEndNode = FindFurthestNodeRand(player);
             else                                                                              // IF NPC's HP is low =>
                 if (GameConsts.Difficulty == "easy")                                          // run to the farrest part of the map
-                    currentEndNode = FindNodeInPlayerRange(player, 5);                                  
+                    HandleEasyModeFollowing(gameTime, player);
                 else
                 {
                     currentEndNode = FindClosestNode(player.position, player.height);
                 }
-            //currentEndNode = FindClosestNode(player.position, player.height);
         }
 
-        public void ConsiderNpcState()
+        public void ConsiderNpcState(Player player)
         {
-            if (hp > 15)
+            if (hp < 15)
             {
                 currentState = States.runningAway;
             }
             else
             {
-                // if( npcHasRangeSkill && !hasCoolDown() && inRangeSkillRange()) 
-                //      currentState = RangeAttacking
-                // else if( npcHasMeleeSkill && !hasCoolDown() && inMeleeSkillRange() )
-                //      currentState = meleeAttacking
-                // else 
+                if (IfInMagicRange(player) /*npcHasRangeSkill && !hasCoolDown() && */)
+                    currentState = States.rangeAttacking;
+                else if (IfInMeleeRange(player) /*npcHasMeleeSkill && !hasCoolDown() && */)
+                    currentState = States.meleeAttacking;
+                else 
                       currentState = States.following;
+            }
+        }
+
+        private void HandleEasyModeFollowing(GameTime gameTime, Player player)
+        {
+            timeElapsed = gameTime.TotalGameTime.Seconds;
+            if (timeElapsed - timeToUpdate < 10)
+            {
+                //Console.WriteLine("PRESLEDVA ");
+                currentEndNode = FindNodeInPlayerRange(player, 5);
+            }
+            else
+            {
+                if (timeElapsed - timeToUpdate < 20)
+                {
+                    currentEndNode = FindFurthestNodeRand(player);
+                    //Console.WriteLine("BQGAAAAAAAAAAAAAAA ");
+                }
+                else
+                    timeToUpdate = timeElapsed;
             }
         }
 
@@ -339,7 +336,6 @@ namespace Diploma2015.Entity
             return Platforms.nodeList.ElementAt(randNodeInd);
         }
 
-
         private bool CheckIfPassiveForTooLong(GameTime gameTime, int seconds)
         {
             bool passiveForTooLong = false;
@@ -380,6 +376,7 @@ namespace Diploma2015.Entity
 
         private void meleeAttackPlayer(Player player)
         {
+            //Console.WriteLine("MELEEE ATTACKING ");
             if (InMeleeRangeLeft(player))
             {
                 //Console.WriteLine("From left");
@@ -401,9 +398,17 @@ namespace Diploma2015.Entity
             return false;
         }
 
-        private bool InMeleeRange(Player player)
+        private bool IfInMagicRange(Player player)
         {
-            if (position.X - meleeRange < player.position.X && position.X + meleeRange > position.X)
+            if (position.X - magicRange < player.position.X && position.X + magicRange > player.position.X &&
+                FindClosestNode(player.position, player.height).NodePos.Y == FindClosestNode(this.position, this.height).NodePos.Y)
+                return true;
+            return false;
+        }
+
+        private bool IfInMeleeRange(Player player)
+        {
+            if (position.X - meleeRange < player.position.X && position.X + meleeRange > player.position.X)
                 return true;
             return false;
         }

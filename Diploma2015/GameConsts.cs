@@ -7,7 +7,7 @@ namespace Diploma2015
 {
     public class GameConsts
     {
-        public static string Difficulty = "hard";
+        public static string Difficulty = "easy";
 
         public static string chosenPlayer;
         public static string chosenMap;
@@ -15,9 +15,10 @@ namespace Diploma2015
         public const int ScreenWidth = 1024;
         public const int ScreenHeight = 600;
 
-        public const int PlayerWidth = 50;
-        public const int PlayerHeight = 70;
-        public const int PlayerSpeed = 5;
+        public static int PlayerWidth = 50;
+        public static int PlayerHeight = 70;
+        public static int PlayerSpeed = 5;
+        public static int playerJumpPower = 30;
 
         public const int Npc1W = 30;
         public const int Npc1H = 30;
@@ -31,5 +32,7 @@ namespace Diploma2015
 
         public const int CircleButtonRadius = 90;
 
+        public const int veryBigVal = 100000;
+        public const int bugVal = 100;
     }
 }

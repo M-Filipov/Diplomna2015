@@ -63,7 +63,7 @@ namespace Diploma2015.Entity
                 {
                     base.hasJumped = true;
                     base.grounded = false;
-                    velocity.Y = -30;
+                    velocity.Y = -GameConsts.playerJumpPower;
                 }
             }
         }
@@ -86,10 +86,10 @@ namespace Diploma2015.Entity
                 }
                 if (move == InputHandler.Movement.Jump && !hasJumped && grounded)
                 {
-                   
+                    
                 }
             }
-            if (!grounded)
+            if (!base.grounded)
                 playerAnim.PlayAnim("walkRight");
  
         }

@@ -12,7 +12,7 @@ namespace Diploma2015.Entity
 {
     public class Platforms : GameObject
     {
-        public int platformH = 30;
+        public int platformH = 10;
 
         public static List<Node> nodeList = new List<Node>();
 

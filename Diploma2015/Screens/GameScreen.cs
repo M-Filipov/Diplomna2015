@@ -15,15 +15,16 @@ namespace Diploma2015.Screens
         Texture2D playerSprite, background, groundTex, npc1Sprite, nodeTex, playerTex, fireBallTex, fireBallSprite;
         Player player;
         List<NPC> NpcList = new List<NPC>();
-        Animations playerAnim, npc1Anim, fireBallAnim;
+        Animations playerAnim, npc1Anim;
         List<Platforms> platforms = new List<Platforms>();
+        
         Platforms pl = new Platforms(0,0,0,0);
 
         public override void Initialize()
         {
             base.Initialize();
+            
             player = new Player(new Vector2(630, 470), GameConsts.PlayerWidth, GameConsts.PlayerHeight);
-
             InitPlatforms(platforms, GameConsts.chosenMap);
 
             playerAnim = new Animations(playerSprite, 5);
@@ -61,7 +62,7 @@ namespace Diploma2015.Screens
         public override void Update(GameTime gameTime)
         {
             List<InputHandler.Movement> moves = InputHandler.getInput();
-            Collision.coll(player, platforms);
+            Collision.Collide(player, platforms);
 
             player.Update(moves, playerAnim);
 
@@ -74,7 +75,7 @@ namespace Diploma2015.Screens
             {
                 npc.AI(player, platforms, gameTime);
                 npc.Update(gameTime);
-                Collision.coll(npc, platforms);
+                Collision.Collide(npc, platforms);
             }
             base.Update(gameTime);
         }
@@ -108,7 +109,7 @@ namespace Diploma2015.Screens
 
         public void InitPlatforms(List<Platforms> platforms, string mapName)
         {
-            int platformH = 15;
+            int platformH = 10;
             switch (mapName)
             {
                 case "forest":

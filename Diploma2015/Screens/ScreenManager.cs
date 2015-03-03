@@ -26,6 +26,7 @@ namespace Diploma2015.Screens
                 return instance;
             }
         }
+
         private ScreenManager()
         {
             Dimensions = new Vector2(GameConsts.ScreenWidth, GameConsts.ScreenHeight);

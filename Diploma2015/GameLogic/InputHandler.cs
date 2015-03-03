@@ -9,6 +9,7 @@ namespace Diploma2015.GameLogic
     public class InputHandler
     {
         public static KeyboardState oldState = Keyboard.GetState();
+        
         public enum Movement
         {
             Left,
@@ -25,16 +26,19 @@ namespace Diploma2015.GameLogic
             List<Movement> moves = new List<Movement>();
             KeyboardState state = Keyboard.GetState();
 
-            if(state.IsKeyDown(Keys.Left) || state.IsKeyDown(Keys.A))
+            if(state.IsKeyDown(Keys.A))
                 moves.Add(Movement.Left);
-            if(state.IsKeyDown(Keys.Right) || state.IsKeyDown(Keys.D))
+            if(state.IsKeyDown(Keys.D))
                 moves.Add(Movement.Right);
-            if ((state.IsKeyDown(Keys.Space) || state.IsKeyDown(Keys.Up)) && (!(oldState.IsKeyDown(Keys.Space))) && !(oldState.IsKeyDown(Keys.Up)))
-            {
+            if ((state.IsKeyDown(Keys.W)) && !(oldState.IsKeyDown(Keys.W)))
                 moves.Add(Movement.Jump);
-            }
             if(state.IsKeyDown(Keys.Q))
                 moves.Add(Movement.AbilityOne);
+            if (state.IsKeyDown(Keys.E))
+                moves.Add(Movement.AbilityTwo);
+            if (state.IsKeyDown(Keys.R))
+                moves.Add(Movement.AbilityThree);
+
             oldState = state;
             return moves;    
         }

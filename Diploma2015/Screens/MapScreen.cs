@@ -8,6 +8,8 @@ using Microsoft.Xna.Framework.Audio;
 
 using Diploma2015.GameLogic;
 using Diploma2015.Gui;
+using Microsoft.Xna.Framework.Media;
+
 
 namespace Diploma2015.Screens
 {
@@ -20,17 +22,15 @@ namespace Diploma2015.Screens
         public GUIManager gManager;
         private string currentSelectedMap;
 
+        private Song song, song1;
+
         public override void Initialize()
         {
             snowImg = new SelectingImgs(50, 100, 200, 300, backgrSnow);
             forestImg = new SelectingImgs(300, 100, 200, 300, backgrForest);
             mountainImg = new SelectingImgs(550, 100, 200, 300, backgrMountain);
             cityImg = new SelectingImgs(800, 100, 200, 300, backgrCity);
-        }
 
-        public override void LoadContent()
-        {
-            base.LoadContent();
             gManager = new GUIManager();
             gManager.AddComponent(new Button((int)(GameConsts.ScreenWidth * 0.4), (int)(GameConsts.ScreenHeight * 0.8), true, "Rectangle"));
             foreach (Button button in gManager.components)
@@ -42,7 +42,12 @@ namespace Diploma2015.Screens
                     button.isResizable = true;
                 }
             }
+        }
 
+        public override void LoadContent()
+        {
+            base.LoadContent();
+            
             backgrSnow = content.Load<Texture2D>("assets/2d/terrain/snow");
             backgrForest = content.Load<Texture2D>("assets/2d/terrain/forest");
             backgrMountain = content.Load<Texture2D>("assets/2d/terrain/mountains");
@@ -50,6 +55,10 @@ namespace Diploma2015.Screens
             
             imgBackgroundSelectionTex = content.Load<Texture2D>("assets/2d/gui/imgSelectingBackground");
             background = content.Load<Texture2D>("assets/2d/gui/mysticBackground");
+
+            //song = content.Load<Song>("happy");  // Put the name of your song here instead of "song_title"
+            //song1 = content.Load<Song>("assets/2d/audio/wind");
+            //MediaPlayer.Play(song1);
         }
 
         public override void UnloadContent()
@@ -60,7 +69,7 @@ namespace Diploma2015.Screens
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            setSelected();
+            SetSelected();
 
             gManager.Update(mouseState);
             if (gManager.components[0].isMouseClicked)
@@ -68,10 +77,10 @@ namespace Diploma2015.Screens
                 GameConsts.chosenMap = currentSelectedMap;
                 ScreenManager.Instance.ChangeToScreen(new CharacterScreen());
             }
-
+            MediaPlayer.Play(song);
         }
 
-        public void setSelected()
+        public void SetSelected()
         {
             if (snowImg.ifSelected(mouseState))
             {

@@ -10,12 +10,9 @@ namespace Diploma2015.GameLogic
     public class Node
     {
         public Texture2D nodeTex;
-
+     
         public Vector2 NodePos;
-
         public List<Node> connectors = new List<Node>();
-
-        public int cost;
         public int H;
         public bool fallNode = false;
 

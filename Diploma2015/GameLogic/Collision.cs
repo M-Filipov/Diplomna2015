@@ -13,15 +13,12 @@ namespace Diploma2015.GameLogic
                     colUp = false, 
                     colDown = false;
 
-        public static void coll(Characters obj, List<Platforms> platforms)
+        public static void Collide(Characters obj, List<Platforms> platforms)
         {
             foreach (Platforms obj2 in platforms)
             {
-                isColliding(obj, obj2);
-             //   if (colLeft)
-              //      obj.position.X -= GameConsts.PlayerSpeed;
-             //   if (colRight)
-             //       obj.position.X += GameConsts.PlayerSpeed;
+                IsColliding(obj, obj2);
+
                 if (colDown)
                 {
                     obj.position.Y = obj2.position.Y - obj.height;
@@ -37,24 +34,24 @@ namespace Diploma2015.GameLogic
             colLeft = false;
             colRight = false;
         }
-
-        private static void isColliding(GameObject obj1, GameObject obj2)
+            
+        private static void IsColliding(GameObject obj1, GameObject obj2)
         {
             if (obj1.position.X + obj1.width >= obj2.position.X &&
                 obj1.position.Y >= obj2.position.Y &&
                 obj1.position.Y <= obj2.position.Y + obj2.height
-              )
+               )
                 colRight = true;
             if (obj1.position.X >= obj2.position.X + obj2.width &&
                 obj1.position.Y >= obj2.position.Y &&
                 obj1.position.Y >= obj2.position.Y + obj2.height
-                )
+               )
                 colLeft = true;
             if (obj1.position.X + obj1.width >= obj2.position.X &&
                 obj1.position.X <= obj2.position.X + obj2.width &&
                 (obj1.position.Y + obj1.height) >= obj2.position.Y &&
                 obj1.position.Y + obj1.height <= obj2.position.Y + obj2.height
-                )
+               )
                 colDown = true;
         }
         
