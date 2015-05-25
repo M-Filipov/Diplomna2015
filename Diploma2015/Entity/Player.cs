@@ -25,10 +25,27 @@ namespace Diploma2015.Entity
             hp = 100;
         }
 
-        public void LoadPlayerAnims(Animations playerAnim)
+        public void LoadCharOneAnims(Animations playerAnim)
         {
-//           playerAnim.AddAnimations(3, 0, 0, "walkLeft", 50, 50);
-//           playerAnim.AddAnimations(3, 0, 1, "walkRight", 50, 50);
+            playerAnim.AddAnimation(3, 0, 40, "walkRight", 69, 76);
+            playerAnim.AddAnimation(4, 318, 40, "walkLeft", 69, 76);
+        }
+
+        public void LoadCharTwoAnims(Animations playerAnim)
+        {
+            playerAnim.AddAnimation(8, 0, 217, "walkRight", 80, 97);
+            playerAnim.AddAnimation(8, 680, 217, "walkLeft", 80, 97);
+        }
+
+        public void LoadCharThreeAnim(Animations playerAnim)
+        {
+            playerAnim.AddAnimation(7, 250, 120, "walkRight", 60, 100);
+            playerAnim.AddAnimation(6, 740, 120, "walkLeft", 60, 100);
+            
+        }
+
+        public void LoadCharFourAnims(Animations playerAnim)
+        {
             playerAnim.AddAnimation(4, 0, 170, "walkRight", 70, 70);
             playerAnim.AddAnimation(4, 0, 250, "walkLeft", 70, 70);
 
@@ -121,8 +138,6 @@ namespace Diploma2015.Entity
                         anim.PlayAnim("rightFireBall");
                     }
                 }
-
-                
             }
         }
 

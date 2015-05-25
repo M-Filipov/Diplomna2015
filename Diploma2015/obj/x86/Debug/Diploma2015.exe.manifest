@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Diploma2015.exe" size="40360">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Diploma2015.exe" size="40872">
       <assemblyIdentity name="Diploma2015" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>sJIYMka93LmtDcrtTkSNi4va2bQ=</dsig:DigestValue>
+        <dsig:DigestValue>B9+ZbM43VyzQawuvASC1qgfmGaA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -203,13 +203,40 @@
       <dsig:DigestValue>Zr+QjUQjhJpP3MLMAPVqFB3JKNU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\assets\2d\characters\bronzeChar.png" size="79410">
+  <file name="Content\assets\2d\characters\characterFour.png" size="79410">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>Dws5xiOOgIO+GksQzGJmU6B/IPE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\assets\2d\characters\characterOne.png" size="100298">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>KfqCEh0QA47G6zNdRBsO8yJxHAo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\assets\2d\characters\characterThree.png" size="151416">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>mxTyfRGy1B1lWsS898bWPm87Qaw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\assets\2d\characters\characterTwo.png" size="126535">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>J0tFKEJwTzKZkL67sseIR2RFN7g=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\assets\2d\characters\firePlayer.png" size="16087">

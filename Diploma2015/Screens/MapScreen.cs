@@ -56,7 +56,7 @@ namespace Diploma2015.Screens
             imgBackgroundSelectionTex = content.Load<Texture2D>("assets/2d/gui/imgSelectingBackground");
             background = content.Load<Texture2D>("assets/2d/gui/mysticBackground");
 
-            //song = content.Load<Song>("happy");  // Put the name of your song here instead of "song_title"
+            //song = content.Load<Song>("happy");  
             //song1 = content.Load<Song>("assets/2d/audio/wind");
             //MediaPlayer.Play(song1);
         }
@@ -77,7 +77,7 @@ namespace Diploma2015.Screens
                 GameConsts.chosenMap = currentSelectedMap;
                 ScreenManager.Instance.ChangeToScreen(new CharacterScreen());
             }
-            MediaPlayer.Play(song);
+            //MediaPlayer.Play(song);
         }
 
         public void SetSelected()

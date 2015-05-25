@@ -13,7 +13,7 @@ namespace Diploma2015.Screens
 {
     public class CharacterScreen : Screen
     {
-        Texture2D background, characterOneTex, imgBackgroundSelectionTex, characterFourTex;
+        Texture2D background, characterOneTex, characterTwoTex, characterThreeTex, imgBackgroundSelectionTex, characterFourTex;
         SelectingImgs characterOne, characterTwo, characterThree, characterFour;
         public Rectangle imgBackgroundSelectionRect;
         public string currentSelectedPlayer;
@@ -21,15 +21,15 @@ namespace Diploma2015.Screens
 
         public override void Initialize()
         {
-            characterOne = new SelectingImgs(characterFourTex, 150, 100, 150, 150);
-            characterTwo = new SelectingImgs(characterOneTex, 350, 100, 150, 150);
-            characterThree = new SelectingImgs(characterFourTex, 550, 100, 150, 150);
+            characterOne = new SelectingImgs(characterOneTex, 350, 100, 150, 150);
+            characterTwo = new SelectingImgs(characterTwoTex, 150, 100, 150, 150);
+            characterThree = new SelectingImgs(characterThreeTex, 550, 100, 150, 150);
             characterFour = new SelectingImgs(characterFourTex, 750, 100, 150, 150);
 
-            characterOne.selectingAnim.AddAnimation(5, 250, 80, "idle", 80, 80);
-            characterTwo.selectingAnim.AddAnimation(5, 250, 80, "idle", 80, 80);
-            characterThree.selectingAnim.AddAnimation(5, 250, 80, "idle", 80, 80);
-            characterFour.selectingAnim.AddAnimation(5, 250, 80, "idle", 80, 80);
+            characterOne.selectingAnim.AddAnimation(3, 10, 130, "idle", 90, 95);
+            characterTwo.selectingAnim.AddAnimation(3, 5, 8, "idle", 55, 105);
+            characterThree.selectingAnim.AddAnimation(7, 250, 120, "idle", 60, 100);
+            characterFour.selectingAnim.AddAnimation(4, 0, 170, "idle", 70, 70);       //5, 250, 80, "idle", 80, 80  shoot anim
 
             base.Initialize();
         }
@@ -49,8 +49,10 @@ namespace Diploma2015.Screens
                 }
             }
 
-            characterOneTex = content.Load<Texture2D>("assets/2d/characters/bronzeChar");
-            characterFourTex = content.Load<Texture2D>("assets/2d/characters/bronzeChar");
+            characterOneTex = content.Load<Texture2D>("assets/2d/characters/characterOne");
+            characterTwoTex = content.Load<Texture2D>("assets/2d/characters/characterTwo");
+            characterThreeTex = content.Load<Texture2D>("assets/2d/characters/characterThree");
+            characterFourTex = content.Load<Texture2D>("assets/2d/characters/characterFour");
             background = content.Load<Texture2D>("assets/2d/gui/mysticBackground");
             imgBackgroundSelectionTex = content.Load<Texture2D>("assets/2d/gui/imgSelectingBackground");
         }
@@ -97,7 +99,7 @@ namespace Diploma2015.Screens
             }
             if (characterFour.ifSelected(mouseState))
             {
-                currentSelectedPlayer = "bronzeChar";
+                currentSelectedPlayer = "characterFour";
                 setSelectionBackgroundPos(characterFour);
             }
 

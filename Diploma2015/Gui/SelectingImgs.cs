@@ -27,7 +27,7 @@ namespace Diploma2015.GameLogic
             Width = width;
             Height = height;
             selectingSprite = sprite;
-            selectingAnim = new Animations(selectingSprite, 3);
+            selectingAnim = new Animations(selectingSprite, 7);
             selectingAnim.destRect.X = x;
             selectingAnim.destRect.Y = y;
             selectingAnim.destRect.Width = width;

@@ -30,9 +30,9 @@ namespace Diploma2015.Screens
             playerAnim = new Animations(playerSprite, 5);
 
             nodeTex = content.Load<Texture2D>("assets/2d/nodeTex");
-
             Astar.CreateNodes(platforms, nodeTex);
-            player.LoadPlayerAnims(playerAnim);
+
+            LoadChosenPlayerAnim();
 
             for (int i = 0; i < 2; i++)
             {
@@ -79,6 +79,7 @@ namespace Diploma2015.Screens
             }
             base.Update(gameTime);
         }
+
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(background, new Rectangle(0, 0, GameConsts.ScreenWidth, GameConsts.ScreenHeight), Color.White);
@@ -98,14 +99,31 @@ namespace Diploma2015.Screens
                 spriteBatch.Draw(groundTex, new Rectangle((int)plat.position.X, (int)plat.position.Y, plat.width, plat.height), Color.White);
             }
 
-            foreach (Node n in Platforms.nodeList)
-            {
-                spriteBatch.Draw(n.nodeTex, new Rectangle((int)n.NodePos.X, (int)n.NodePos.Y, 5, 10), Color.Wheat);
-            }
+            //foreach (Node n in Platforms.nodeList)
+            //{
+            //    spriteBatch.Draw(n.nodeTex, new Rectangle((int)n.NodePos.X, (int)n.NodePos.Y, 5, 10), Color.Wheat);
+            //}
             base.Draw(spriteBatch);
         }
 
-
+        public void LoadChosenPlayerAnim()
+        {
+            switch (GameConsts.chosenPlayer)
+            {
+                case "characterOne":
+                    player.LoadCharOneAnims(playerAnim);
+                    break;
+                case "characterTwo":
+                    player.LoadCharTwoAnims(playerAnim);
+                    break;
+                case "characterThree":
+                    player.LoadCharThreeAnim(playerAnim);
+                    break;
+                case "characterFour":
+                    player.LoadCharFourAnims(playerAnim);
+                    break;
+            }
+        }
 
         public void InitPlatforms(List<Platforms> platforms, string mapName)
         {
@@ -142,10 +160,5 @@ namespace Diploma2015.Screens
 
             }
         }
-
-
     }
-
-
-
 }
