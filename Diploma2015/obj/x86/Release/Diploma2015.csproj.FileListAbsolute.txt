@@ -1,0 +1,161 @@
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\blue_circle_in.png
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\blue_circle_out.png
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\blue_rect_in.png
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\blue_rect_out.png
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\symb_mute.png
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\symb_volume.png
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\characters\npc1.png
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\characters\smiley.png
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\terrain\Dust.jpg
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\terrain\platform.png
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\mysticBackground.jpg
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\Diploma2015.exe
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\Diploma2015.pdb
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\MonoGame.Framework.dll
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.MediaFoundation.dll
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.dll
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.XAudio2.dll
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct3D11.dll
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.DXGI.dll
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct2D1.dll
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\Lidgren.Network.dll
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.XInput.dll
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.RawInput.dll
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct3D9.dll
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.MediaFoundation.xml
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.xml
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.XAudio2.xml
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct3D11.xml
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.DXGI.xml
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct2D1.xml
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.XInput.xml
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.RawInput.xml
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct3D9.xml
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\obj\x86\Release\Diploma2015.exe
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\obj\x86\Release\Diploma2015.pdb
+C:\Users\Milko\Documents\Visual Studio 2013\Projects\Diplomna2015\Diploma2015\obj\x86\Release\Diploma2015.csprojResolveAssemblyReference.cache
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\obj\x86\Release\Diploma2015.exe
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\obj\x86\Release\Diploma2015.pdb
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\blue_circle_in.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\blue_circle_out.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\blue_rect_in.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\blue_rect_out.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\symb_mute.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\symb_volume.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\crs_arrow.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\symb_leftarrow.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\nodeTex.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\abilities\fireBall.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\abilities\fireBallAnim.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\characters\bronzeChar.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\characters\firePlayer.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\characters\npc1.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\characters\redPlayer.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\characters\smiley.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\characters\whitePlayer.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\terrain\city.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\terrain\forest.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\imgSelectingBackground.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\terrain\mountains.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\terrain\snow.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\terrain\Dust.jpg
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\terrain\platform.png
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\mysticBackground.jpg
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Gui\SelectingImgs.cs
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Diploma2015.exe.manifest
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Diploma2015.application
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Diploma2015.exe
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Diploma2015.pdb
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\MonoGame.Framework.dll
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.MediaFoundation.dll
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.dll
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.XAudio2.dll
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct3D11.dll
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.DXGI.dll
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct2D1.dll
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Lidgren.Network.dll
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.XInput.dll
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.RawInput.dll
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct3D9.dll
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.MediaFoundation.xml
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.xml
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.XAudio2.xml
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct3D11.xml
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.DXGI.xml
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct2D1.xml
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.XInput.xml
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.RawInput.xml
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct3D9.xml
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\obj\x86\Release\Diploma2015.csprojResolveAssemblyReference.cache
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\obj\x86\Release\Diploma2015.exe.manifest
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\obj\x86\Release\Diploma2015.application
+C:\Users\Nick\Documents\GitHubA\Diplomna2015\Diploma2015\bin\Windows\Release\Content\happy.mp3
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\obj\x86\Release\Diploma2015.exe
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\obj\x86\Release\Diploma2015.pdb
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\blue_circle_in.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\blue_circle_out.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\blue_rect_in.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\blue_rect_out.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\crs_arrow.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\symb_leftarrow.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\symb_mute.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\symb_volume.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\nodeTex.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\abilities\fireBall.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\abilities\fireBallAnim.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\characters\characterOne.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\characters\characterThree.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\characters\characterFour.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\characters\firePlayer.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\characters\characterTwo.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\characters\npc1.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\characters\redPlayer.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\characters\smiley.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\characters\whitePlayer.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\easyMode.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\hardMode.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\terrain\city.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\terrain\forest.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\imgSelectingBackground.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\terrain\mountains.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\terrain\snow.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\terrain\Dust.jpg
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\terrain\platform.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\2d\gui\mysticBackground.jpg
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\audio\Click22-Sebastian-759472264.wma
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\audio\ClickOn.mp3
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\audio\happy.wma
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\audio\wind.wav
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\audio\happy.mp3
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\audio\happy.xnb
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\audio\ClickOn.xnb
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\audio\ButtonClickOff.xnb
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Content\assets\audio\Click22-Sebastian-759472264.xnb
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Gui\SelectingImgs.cs
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Diploma2015.exe.manifest
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Diploma2015.application
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Diploma2015.exe
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\Diploma2015.pdb
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\MonoGame.Framework.dll
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.MediaFoundation.dll
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.dll
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.XAudio2.dll
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct3D11.dll
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.DXGI.dll
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct2D1.dll
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.XInput.dll
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.RawInput.dll
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct3D9.dll
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\MonoGame.Framework.xml
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.MediaFoundation.xml
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.xml
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.XAudio2.xml
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct3D11.xml
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.DXGI.xml
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct2D1.xml
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.XInput.xml
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.RawInput.xml
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Release\SharpDX.Direct3D9.xml
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\obj\x86\Release\Diploma2015.csprojResolveAssemblyReference.cache
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\obj\x86\Release\Diploma2015.exe.manifest
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\obj\x86\Release\Diploma2015.application
