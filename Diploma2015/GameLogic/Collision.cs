@@ -34,7 +34,7 @@ namespace Diploma2015.GameLogic
             colLeft = false;
             colRight = false;
         }
-            
+
         private static void IsColliding(GameObject obj1, GameObject obj2)
         {
             if (obj1.position.X + obj1.width >= obj2.position.X &&
@@ -53,6 +53,18 @@ namespace Diploma2015.GameLogic
                 obj1.position.Y + obj1.height <= obj2.position.Y + obj2.height
                )
                 colDown = true;
+        }
+
+        public static bool SimpleIsColliding(GameObject o1, GameObject o2)
+        {
+            bool result = false;
+            if (o1.position.X + o1.width >= o2.position.X &&
+                o1.position.X + o1.width <= o2.position.X + o2.width &&
+                o1.position.Y >= o2.position.Y &&
+                o1.position.Y <= o2.position.Y + o2.height
+               )
+               result = true;
+            return result;
         }
         
     }

@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Diploma2015.exe" size="41384">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Diploma2015.exe" size="44456">
       <assemblyIdentity name="Diploma2015" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>b1NpIqYoJsi3GERE24UrVe96hzY=</dsig:DigestValue>
+        <dsig:DigestValue>oYM9qLc819uGKzZK4UlzCqT9xOc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -272,6 +272,15 @@
       <dsig:DigestValue>KLGKCnHZBehQ8bnZ+VhMxA/4a74=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\assets\2d\coinTex.png" size="277832">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>aaLjVoRu46m1Q9udm8FQw5fwIhc=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\assets\2d\gui\blue_circle_in.png" size="6953">
     <hash>
       <dsig:Transforms>
@@ -344,6 +353,15 @@
       <dsig:DigestValue>jJPZ/WTXrEcg3PDS9PGFxCWwyAI=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\assets\2d\gui\loseScreen.png" size="414455">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>EtJxFrwNk74B0F+m3zjhPTjML2g=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\assets\2d\gui\mysticBackground.jpg" size="141310">
     <hash>
       <dsig:Transforms>
@@ -378,6 +396,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>qIxVh6Rch93S4sUkH/UMoWnxLew=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\assets\2d\gui\winScreen.png" size="416645">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>8oX5VNjJ/i9Bq1zWo8xRNZeE7+I=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\assets\2d\nodeTex.png" size="148">

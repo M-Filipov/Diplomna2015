@@ -21,6 +21,10 @@ namespace Diploma2015
         public static int PlayerSpeed = 5;
         public static int playerJumpPower = 30;
 
+        public static int CoinInterval = 30;
+        public static int CoinW = 20;
+        public static int CoinH = 20;
+
         public const int Npc1W = 30;
         public const int Npc1H = 30;
 
@@ -35,5 +39,6 @@ namespace Diploma2015
 
         public const int veryBigVal = 100000;
         public const int bugVal = 100;
+
     }
 }

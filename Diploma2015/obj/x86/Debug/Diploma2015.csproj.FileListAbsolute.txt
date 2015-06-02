@@ -326,3 +326,6 @@ C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Conten
 C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\easyMode.png
 C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\hardMode.png
 C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\obj\x86\Debug\Diploma2015.csprojResolveAssemblyReference.cache
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\coinTex.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\loseScreen.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\winScreen.png

@@ -33,7 +33,7 @@ namespace Diploma2015.Screens
             gManager = new GUIManager();
             gManager.AddComponent(new Button((int)(GameConsts.ScreenWidth * 0.4), (int)(GameConsts.ScreenHeight * 0.40), true, "Rectangle"));
             gManager.AddComponent(new Button((int)(GameConsts.ScreenWidth * 0.4), (int)(GameConsts.ScreenHeight * 0.55), true, "Rectangle"));
-            gManager.AddComponent(new Button((int)(GameConsts.ScreenWidth * 0.4), (int)(GameConsts.ScreenHeight * 0.70), true, "Rectangle"));
+           // gManager.AddComponent(new Button((int)(GameConsts.ScreenWidth * 0.4), (int)(GameConsts.ScreenHeight * 0.70), true, "Rectangle"));
             gManager.AddComponent(new Button(0, GameConsts.ScreenHeight - GameConsts.CircleButtonRadius, true, "Circle"));
 
             foreach (Button button in gManager.components)
@@ -77,14 +77,13 @@ namespace Diploma2015.Screens
             {
                 ScreenManager.Instance.ChangeToScreen(new HelpScreen());
             }
-            else if (gManager.components[2].isMouseClicked)
-            {
-                Game1.game.Exit(); //lol
-            }
+            //else if (gManager.components[2].isMouseClicked) {
+               // Game1.game.Exit();            }
+
             buttonTimer++;
             if (buttonTimer > 120) buttonTimer = 120;
 
-            if (gManager.components[3].isMouseClicked)
+            if (gManager.components[2].isMouseClicked)
             {
                 muteSound(120);
             }

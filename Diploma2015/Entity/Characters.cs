@@ -50,10 +50,15 @@ namespace Diploma2015.Entity
 
         public void Kill()
         {
-            this.position.X = 400;
-            this.position.Y = 400;
+            //this.position.X = 400;
+            //this.position.Y = 400;
 
             hp = 0;
+        }
+
+        public bool IsDead()
+        {
+            return hp == 0;
         }
 
         public virtual void Jump()

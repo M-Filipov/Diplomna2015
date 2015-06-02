@@ -7,14 +7,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Diploma2015.exe.manifest" size="24957">
+    <dependentAssembly dependencyType="install" codebase="Diploma2015.exe.manifest" size="26143">
       <assemblyIdentity name="Diploma2015.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>vQxREhL2umhumzQhm0xWGyt7Ieg=</dsig:DigestValue>
+        <dsig:DigestValue>14coMaiTH9vXP/7R94bJ3AD1ZzM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
