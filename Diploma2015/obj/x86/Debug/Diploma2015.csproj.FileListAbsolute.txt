@@ -108,7 +108,6 @@ C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\obj\x86\Debug\Diploma201
 C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\blue_circle_in.png
 C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\blue_circle_out.png
 C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\blue_rect_in.png
-C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\blue_rect_out.png
 C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\crs_arrow.png
 C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\symb_leftarrow.png
 C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\symb_mute.png
@@ -329,3 +328,15 @@ C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\obj\x86\Debug\Diploma201
 C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\coinTex.png
 C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\loseScreen.png
 C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\winScreen.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\blue_rect_in_start.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\blue_rect_out_start.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\blue_rect_out.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\blue_rect_in_help.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\blue_rect_out_help.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\helpScreenBackground.jpg
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\blue_rect_in_choosePlayer.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\blue_rect_out_choosePlayer.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\blue_rect_in_chooseMap.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\blue_rect_out_chooseMap.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\blue_rect_in_playAgain.png
+C:\Users\Nick\Documents\GitHub\Diplomna2015\Diploma2015\bin\Windows\Debug\Content\assets\2d\gui\blue_rect_out_playAgain.png

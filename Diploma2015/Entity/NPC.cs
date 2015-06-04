@@ -10,7 +10,6 @@ namespace Diploma2015.Entity
 {
     public class NPC : Characters
     {
-        private int npcSpeed;
         public States currentState = States.following;
         private double timeElapsed;
         private double timeToUpdate;
@@ -49,7 +48,7 @@ namespace Diploma2015.Entity
             base.hp = hp;
             base.meleeRange = meleeR;
             base.magicRange = magicR;
-            this.npcSpeed = speed;
+            base.speed = speed;
             base.currentNodeOn = FindClosestNode(base.position, height);
             currentStartNode = currentNodeOn;
             currentEndNode = currentStartNode;
@@ -73,15 +72,15 @@ namespace Diploma2015.Entity
                     continue;
                 if (move == InputHandler.Movement.Left)
                 {
-                    position.X -= this.npcSpeed;
+                    position.X -= this.speed;
                 }
                 if (move == InputHandler.Movement.Right)
                 {
-                    position.X += this.npcSpeed;    
+                    position.X += this.speed;    
                 }
                 if (move == InputHandler.Movement.Jump && hasJumped == false && grounded)
                 {
-                    velocity.Y = -30;
+                    velocity.Y = -GameVars.antiGravity;
                     base.hasJumped = true;
                     base.grounded = false;
                 }
@@ -90,7 +89,7 @@ namespace Diploma2015.Entity
 
         public void AI(Player player, List<Platforms> platforms, GameTime gameTime)
         {
-            bool passiveForTooLong = CheckIfPassiveForTooLong(gameTime, 10);
+            bool passiveForTooLong = CheckIfPassiveForTooLong(gameTime, 7);
 
             ConsiderNpcState(player);
             
@@ -136,12 +135,14 @@ namespace Diploma2015.Entity
             }
         }
 
+
+
         private void ConsiderNpcDest(Player player, GameTime gameTime)               // Considers the end node for the pathfinding;  if hp - low => furthest node; ELSE  If Level difficulty = easy  ||  hard
         {
             if (currentState == States.runningAway)
                 currentEndNode = FindFurthestNodeRand(player);
             else                                                                              // IF NPC's HP is low =>
-                if (GameConsts.Difficulty == "easy")                                          // run to the furthest part of the map
+                if (GameVars.Difficulty == "easy")                                          // run to the furthest part of the map
                     HandleEasyModeFollowing(gameTime, player);
                 else
                 {
@@ -157,11 +158,11 @@ namespace Diploma2015.Entity
             }
             else
             {
-                if (IfInMagicRange(player) /*npcHasRangeSkill && !hasCoolDown() && */)
-                    currentState = States.rangeAttacking;
-                else if (IfInMeleeRange(player) /*npcHasMeleeSkill && !hasCoolDown() && */)
-                    currentState = States.meleeAttacking;
-                else 
+                //if (IfInMagicRange(player) /*npcHasRangeSkill && !hasCoolDown() && */)
+                //    currentState = States.rangeAttacking;
+                //else if (IfInMeleeRange(player) /*npcHasMeleeSkill && !hasCoolDown() && */)
+                //    currentState = States.meleeAttacking;
+                //else 
                       currentState = States.following;
             }
         }
@@ -171,7 +172,7 @@ namespace Diploma2015.Entity
             timeElapsed = gameTime.TotalGameTime.Seconds;
             if (timeElapsed - timeToUpdate < 10)
             {
-                currentEndNode = FindNodeInPlayerRange(player, 5);
+                currentEndNode = FindNodeInPlayerRange(player, 3);
             }
             else
             {
@@ -184,23 +185,6 @@ namespace Diploma2015.Entity
             }
         }
 
-        private void CallChasePlayerEveryXSeconds(Player player, List<Node> road, GameTime gameTime)
-        {
-            timeElapsed = gameTime.TotalGameTime.Seconds;
-
-            if (timeElapsed - timeToUpdate < timeForChasing)
-            {
-                
-            }
-            else
-            {
-                if(timeElapsed - timeToUpdate > timeForChasing) 
-                    timeToUpdate = timeElapsed;
-                
-                moves = new List<InputHandler.Movement>();
-            }
-        }
- 
         private void CompletePath(List<Node> path)
         {
             moves = new List<InputHandler.Movement>();
@@ -208,8 +192,8 @@ namespace Diploma2015.Entity
             {
                 if (path.ElementAt(currentIndexInPath).fallNode == true)
                 {
-                    if (path.ElementAt(currentIndexInPath).NodePos.X + fallRadius >= position.X &&
-                        path.ElementAt(currentIndexInPath).NodePos.X - fallRadius <= position.X)
+                    if (path.ElementAt(currentIndexInPath).NodePos.X + fallRadius >= this.position.X &&
+                        path.ElementAt(currentIndexInPath).NodePos.X - fallRadius <= this.position.X)
                     {
                         currentNodeOn = path.ElementAt(currentIndexInPath);
                         currentIndexInPath++;
@@ -217,9 +201,9 @@ namespace Diploma2015.Entity
                 }
                 else
                 {
-                    if (path.ElementAt(currentIndexInPath).NodePos.X == position.X &&
-                        position.Y + height > path.ElementAt(currentIndexInPath).NodePos.Y - fallRadius &&
-                        position.Y + height < path.ElementAt(currentIndexInPath).NodePos.Y + fallRadius)
+                    if (path.ElementAt(currentIndexInPath).NodePos.X == this.position.X &&
+                        this.position.Y + height > path.ElementAt(currentIndexInPath).NodePos.Y - fallRadius &&
+                        this.position.Y + height < path.ElementAt(currentIndexInPath).NodePos.Y + fallRadius)
                     {
                         currentNodeOn = path.ElementAt(currentIndexInPath);
                         currentIndexInPath++;
@@ -268,48 +252,6 @@ namespace Diploma2015.Entity
                 return currentEndNode;
         }
 
-        private Node FindFarrestNode(Player player)
-        {
-            Node farrestNode = Platforms.nodeList.ElementAt(1);
-            int playerOpposQuad = PlayersOppositeScreenQuad(player);
-
-            foreach (Node n in Platforms.nodeList)
-            {
-                switch (playerOpposQuad)
-                {
-                    case 1:
-                        if (n.NodePos.X > farrestNode.NodePos.X || n.NodePos.Y < farrestNode.NodePos.Y)
-                            farrestNode = n;
-                        break;
-                    case 2:
-                        if (n.NodePos.X < farrestNode.NodePos.X || n.NodePos.Y < farrestNode.NodePos.Y)
-                            farrestNode = n;
-                        break;
-                    case 3:
-                        if (n.NodePos.X < farrestNode.NodePos.X || n.NodePos.Y > farrestNode.NodePos.Y)
-                            farrestNode = n;
-                        break;
-                    case 4:
-                        if (n.NodePos.X > farrestNode.NodePos.X || n.NodePos.Y > farrestNode.NodePos.Y)
-                            farrestNode = n;
-                        break;
-                    default:
-                        break;
-                }
-            }
-            return farrestNode;
-        }
-
-        //public Node RandFindFarrestNode(Player player)
-        //{
-        //    Random rand = new Random();
-        //    int randNodeInd = rand.Next(Platforms.nodeList.Count());
-        //    Node farrest = new Node(new Vector2(0, 0));
-        //    int currLongestPath = 0;
-        //    List<Node> currPath = new List<Node>();
-
-           
-        //}
 
         private Node FindFurthestNodeRand(Player player)
         {
@@ -354,18 +296,79 @@ namespace Diploma2015.Entity
             return passiveForTooLong;
         }
 
+        private bool IfEndNodeReached()
+        {
+            return currentNodeOn.NodePos == currentEndNode.NodePos;
+        }
+
+        private void CleanOldPathCallAstar()
+        {
+            currentIndexInPath = 0;
+            road = new List<Node>();
+            road = Astar.PathFind(currentStartNode, currentEndNode);
+        }
+
+        private void CallChasePlayerEveryXSeconds(Player player, List<Node> road, GameTime gameTime)
+        {
+            timeElapsed = gameTime.TotalGameTime.Seconds;
+
+            if (timeElapsed - timeToUpdate < timeForChasing)
+            {
+
+            }
+            else
+            {
+                if (timeElapsed - timeToUpdate > timeForChasing)
+                    timeToUpdate = timeElapsed;
+
+                moves = new List<InputHandler.Movement>();
+            }
+        }
+
+        private Node FindFarrestNode(Player player)             // currently not used
+        {
+            Node farrestNode = Platforms.nodeList.ElementAt(1);
+            int playerOpposQuad = PlayersOppositeScreenQuad(player);
+
+            foreach (Node n in Platforms.nodeList)
+            {
+                switch (playerOpposQuad)
+                {
+                    case 1:
+                        if (n.NodePos.X > farrestNode.NodePos.X || n.NodePos.Y < farrestNode.NodePos.Y)
+                            farrestNode = n;
+                        break;
+                    case 2:
+                        if (n.NodePos.X < farrestNode.NodePos.X || n.NodePos.Y < farrestNode.NodePos.Y)
+                            farrestNode = n;
+                        break;
+                    case 3:
+                        if (n.NodePos.X < farrestNode.NodePos.X || n.NodePos.Y > farrestNode.NodePos.Y)
+                            farrestNode = n;
+                        break;
+                    case 4:
+                        if (n.NodePos.X > farrestNode.NodePos.X || n.NodePos.Y > farrestNode.NodePos.Y)
+                            farrestNode = n;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return farrestNode;
+        }
+
         public int PlayersOppositeScreenQuad(Player player)    // screen - coord system - gives plyer's opposite one 1-3; 2-4
         {
-            if (player.position.X > GameConsts.ScreenWidth / 2)
+            if (player.position.X > GameVars.ScreenWidth / 2)
             {
-                if (player.position.Y > GameConsts.ScreenHeight / 2)
+                if (player.position.Y > GameVars.ScreenHeight / 2)
                     return 2;
                 else
                     return 3;
             }
             else
             {
-                if (player.position.Y > GameConsts.ScreenHeight / 2)
+                if (player.position.Y > GameVars.ScreenHeight / 2)
                     return 1;
                 else
                     return 4;
@@ -417,18 +420,6 @@ namespace Diploma2015.Entity
                 return true;
 
             return false;
-        }
-
-        private bool IfEndNodeReached()
-        {
-            return currentNodeOn.NodePos == currentEndNode.NodePos;
-        }
-
-        private void CleanOldPathCallAstar()
-        {
-            currentIndexInPath = 0;
-            road = new List<Node>();
-            road = Astar.PathFind(currentStartNode, currentEndNode);
         }
 
     }

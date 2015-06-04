@@ -32,13 +32,13 @@ namespace Diploma2015.Screens
             cityImg = new SelectingImgs(800, 100, 200, 300, backgrCity);
 
             gManager = new GUIManager();
-            gManager.AddComponent(new Button((int)(GameConsts.ScreenWidth * 0.4), (int)(GameConsts.ScreenHeight * 0.8), true, "Rectangle"));
+            gManager.AddComponent(new Button((int)(GameVars.ScreenWidth * 0.4), (int)(GameVars.ScreenHeight * 0.8), true, "Rectangle"));
             foreach (Button button in gManager.components)
             {
                 if (button.shape.Equals("Rectangle"))
                 {
-                    button.currentTexture = button.onFreeTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_out");
-                    button.onClickTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_in");
+                    button.currentTexture = button.onFreeTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_out_chooseMap");
+                    button.onClickTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_in_chooseMap");
                     button.isResizable = true;
                 }
             }
@@ -75,9 +75,9 @@ namespace Diploma2015.Screens
             if (gManager.components[0].isMouseClicked)
             {
                 if (currentSelectedMap == null)
-                    GameConsts.chosenMap = "snow";
+                    GameVars.chosenMap = "snow";
                 else
-                    GameConsts.chosenMap = currentSelectedMap;
+                    GameVars.chosenMap = currentSelectedMap;
                 
                 ScreenManager.Instance.ChangeToScreen(new CharacterScreen());
             }
@@ -124,7 +124,7 @@ namespace Diploma2015.Screens
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(background, new Rectangle(0, 0, GameConsts.ScreenWidth, GameConsts.ScreenHeight), Color.White);
+            spriteBatch.Draw(background, new Rectangle(0, 0, GameVars.ScreenWidth, GameVars.ScreenHeight), Color.White);
 
             snowImg.DrawSelectingImgs(spriteBatch);
             forestImg.DrawSelectingImgs(spriteBatch);

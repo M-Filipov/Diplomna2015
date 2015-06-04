@@ -102,7 +102,7 @@
     <Compile Include="GameLogic\Astar.cs" />
     <Compile Include="GameLogic\CoinGeneration.cs" />
     <Compile Include="GameLogic\Collision.cs" />
-    <Compile Include="GameConsts.cs" />
+    <Compile Include="GameVars.cs" />
     <Compile Include="GameLogic\InputHandler.cs" />
     <Compile Include="GameLogic\Node.cs" />
     <Compile Include="GameLogic\SoundManager.cs" />
@@ -177,10 +177,40 @@
     <Content Include="Content\assets\2d\gui\blue_circle_out.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\assets\2d\gui\blue_rect_in_playAgain.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\assets\2d\gui\blue_rect_in_chooseMap.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\assets\2d\gui\blue_rect_in_choosePlayer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\assets\2d\gui\blue_rect_in_help.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\assets\2d\gui\blue_rect_in_start.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\assets\2d\gui\blue_rect_in.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\assets\2d\gui\blue_rect_out_playAgain.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\assets\2d\gui\blue_rect_out_chooseMap.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\assets\2d\gui\blue_rect_out_choosePlayer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\assets\2d\gui\blue_rect_out_help.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\assets\2d\gui\blue_rect_out.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\assets\2d\gui\blue_rect_out_start.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\assets\2d\gui\easyMode.png">
@@ -190,6 +220,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\assets\2d\gui\loseScreen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\assets\2d\gui\helpScreenBackground.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\assets\2d\gui\winScreen.png">

@@ -9,7 +9,7 @@ namespace Diploma2015.Screens
     {
         private GUIManager gManager;
 
-        private Texture2D exitTexture;
+        private Texture2D exitTexture, background;
         public override void Initialize()
         {
             base.Initialize();            
@@ -19,7 +19,7 @@ namespace Diploma2015.Screens
             base.LoadContent();
 
             gManager = new GUIManager();
-            gManager.AddComponent(new Button(-100, (GameConsts.ScreenHeight - GameConsts.MediumButtonHeight), true, "Rectangle"));
+            gManager.AddComponent(new Button(-100, (GameVars.ScreenHeight - GameVars.MediumButtonHeight), true, "Rectangle"));
             gManager.components[0].isResizable = false;
 
             foreach (Button button in gManager.components)
@@ -28,6 +28,7 @@ namespace Diploma2015.Screens
                 button.currentTexture = button.onFreeTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_out");
             }
 
+            background = content.Load<Texture2D>("assets/2d/gui/helpScreenBackground");
             exitTexture = content.Load<Texture2D>("assets/2d/gui/symb_leftarrow");
         }
 
@@ -50,7 +51,7 @@ namespace Diploma2015.Screens
 
         public override void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
         {
-//            spriteBatch.Begin();
+            spriteBatch.Draw(background, new Rectangle(0, 0, GameVars.ScreenWidth, GameVars.ScreenHeight), Color.White);
 
             foreach (GUIComponent gComponent in gManager.components)
             {
@@ -60,7 +61,7 @@ namespace Diploma2015.Screens
                 }
             }
 
-            spriteBatch.Draw(exitTexture, new Rectangle(gManager.components[0].componentRectangle.X + 105 , GameConsts.ScreenHeight - 52, 80, 40), Color.White);
+            spriteBatch.Draw(exitTexture, new Rectangle(gManager.components[0].componentRectangle.X + 105 , GameVars.ScreenHeight - 52, 80, 40), Color.White);
 
 //            spriteBatch.End();
 

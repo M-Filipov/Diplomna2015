@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Diploma2015.exe" size="44456">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Diploma2015.exe" size="45480">
       <assemblyIdentity name="Diploma2015" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>oYM9qLc819uGKzZK4UlzCqT9xOc=</dsig:DigestValue>
+        <dsig:DigestValue>gx2WI1QbR8tNkuoHmRjUx4O0dmc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -191,13 +191,13 @@
       <dsig:DigestValue>Zr+QjUQjhJpP3MLMAPVqFB3JKNU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\assets\2d\characters\characterFour.png" size="79410">
+  <file name="Content\assets\2d\characters\characterFour.png" size="95748">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Dws5xiOOgIO+GksQzGJmU6B/IPE=</dsig:DigestValue>
+      <dsig:DigestValue>PuCfK1kPPgbyKZkBCtVmVNF/4hM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\assets\2d\characters\characterOne.png" size="100298">
@@ -308,13 +308,103 @@
       <dsig:DigestValue>GUcTrglWXQXoo9IG0/ocH/6vAKc=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\assets\2d\gui\blue_rect_in_chooseMap.png" size="12781">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>R+ZxpuoxFlxuT6QccEwDESb751U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\assets\2d\gui\blue_rect_in_choosePlayer.png" size="12781">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>msEGLAr6pxWNwEP47ju9Ij8GorY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\assets\2d\gui\blue_rect_in_help.png" size="12781">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>I3zfVfLhdfqyPgsqNzkYVwTROc0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\assets\2d\gui\blue_rect_in_playAgain.png" size="12781">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>FwOdij+hfyGJsnFzRUs0MwIBOy4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\assets\2d\gui\blue_rect_in_start.png" size="12781">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>cEcnpTdSQWtnS9tu4sFs4kek/ss=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\assets\2d\gui\blue_rect_out.png" size="12116">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>B8Jw6JgTmrqf5MHr1Ma6mGoIr0Q=</dsig:DigestValue>
+      <dsig:DigestValue>jFnSe16n5JxR1C6Q6lYstUXnB3A=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\assets\2d\gui\blue_rect_out_chooseMap.png" size="12116">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>+ARggQGwHlk72zJVhrq6TNlZnMo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\assets\2d\gui\blue_rect_out_choosePlayer.png" size="12116">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ilX8WDSSiNBVb9L34iAZfI0h5gg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\assets\2d\gui\blue_rect_out_help.png" size="12116">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Q1Zsl+8awdGj46ogGfbgEZYXYTY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\assets\2d\gui\blue_rect_out_playAgain.png" size="12116">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>HYFy7gtyds3FvB6vshzMd4MMpkY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\assets\2d\gui\blue_rect_out_start.png" size="12116">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>RO2vEFc7kLUQZH/h9AbR+pkHuV4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\assets\2d\gui\crs_arrow.png" size="3063">
@@ -342,6 +432,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>/HQfiUta+KMpUioSFPtsDGzOWg8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\assets\2d\gui\helpScreenBackground.jpg" size="168791">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>8R0P4DvrGFNQi052PDuJgjV3G24=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\assets\2d\gui\imgSelectingBackground.png" size="1533">

@@ -28,13 +28,6 @@ namespace Diploma2015.GameLogic
             }
         }
 
-        private static void resetCols()
-        {
-            colDown = false;
-            colLeft = false;
-            colRight = false;
-        }
-
         private static void IsColliding(GameObject obj1, GameObject obj2)
         {
             if (obj1.position.X + obj1.width >= obj2.position.X &&
@@ -66,7 +59,14 @@ namespace Diploma2015.GameLogic
                result = true;
             return result;
         }
-        
+
+        private static void resetCols()
+        {
+            colDown = false;
+            colLeft = false;
+            colRight = false;
+        }
+
     }
     
 }

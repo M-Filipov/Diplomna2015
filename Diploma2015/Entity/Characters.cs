@@ -16,7 +16,7 @@ namespace Diploma2015.Entity
         protected int energy;
         protected int meleeRange;
         protected int magicRange;
-
+        protected int speed;
         protected Node currentNodeOn;
 
         public Vector2 velocity;
@@ -28,7 +28,7 @@ namespace Diploma2015.Entity
 
         public virtual void Gravitation()
         {
-            position.Y += GameConsts.gravity;
+            position.Y += GameVars.gravity;
         }
 
         public virtual void RegenEnergy()
@@ -41,8 +41,8 @@ namespace Diploma2015.Entity
         public virtual void KillIfOutOfMap()
         {
             if(this.position.X < 0 - 100 ||
-                this.position.X > GameConsts.ScreenWidth + 100 ||
-                this.position.Y > GameConsts.ScreenHeight)
+                this.position.X > GameVars.ScreenWidth + 100 ||
+                this.position.Y > GameVars.ScreenHeight)
             {
                 Kill();
             }

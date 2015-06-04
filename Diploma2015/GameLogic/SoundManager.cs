@@ -34,7 +34,7 @@ namespace Diploma2015.GameLogic
 
         public void PlaySound(string soundName)
         {
-            if(GameConsts.IsSoundOn)
+            if(GameVars.IsSoundOn)
                 MediaPlayer.Play(sounds[soundName]);
         }
     }

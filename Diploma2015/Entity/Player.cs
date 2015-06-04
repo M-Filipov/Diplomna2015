@@ -3,10 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-using Diploma2015.GameLogic;
 using Microsoft.Xna.Framework;
 
+using Diploma2015.GameLogic;
 using Diploma2015.Abilities;
 
 namespace Diploma2015.Entity
@@ -41,19 +40,19 @@ namespace Diploma2015.Entity
             {
                 if (move == InputHandler.Movement.Left)
                 {
-                    position.X -= GameConsts.PlayerSpeed;
+                    position.X -= GameVars.PlayerSpeed;
                     characterDir = "left";
                 }
                 if (move == InputHandler.Movement.Right)
                 {
-                    position.X += GameConsts.PlayerSpeed;
+                    position.X += GameVars.PlayerSpeed;
                     characterDir = "right";
                 }
                 if (move == InputHandler.Movement.Jump && !hasJumped && grounded)
                 {
                     base.hasJumped = true;
                     base.grounded = false;
-                    velocity.Y = -GameConsts.playerJumpPower;
+                    velocity.Y = -GameVars.playerJumpPower;
                 }
             }
         }
@@ -64,24 +63,35 @@ namespace Diploma2015.Entity
             playerAnim.destRect.Y = (int)this.position.Y;
             playerAnim.destRect.Width = this.width;
             playerAnim.destRect.Height = this.height;
+            
             foreach (InputHandler.Movement move in moves)
             {
-                if (move == InputHandler.Movement.Left)
+                if(grounded)
                 {
-                    playerAnim.PlayAnim("walkLeft");
+                    if (move == InputHandler.Movement.Left)
+                    {
+                        playerAnim.PlayAnim("walkLeft");
+                    }
+                    if (move == InputHandler.Movement.Right)
+                    {
+                        playerAnim.PlayAnim("walkRight");
+                    }
                 }
-                if (move == InputHandler.Movement.Right)
+                else
                 {
-                    playerAnim.PlayAnim("walkRight");
+                    if ((characterDir == "left"))
+                    {
+                        playerAnim.PlayAnim("jumpRight");
+                    }
+                    if ((characterDir == "right"))
+                    {
+                        playerAnim.PlayAnim("jumpLeft");
+                    }
                 }
-                if (move == InputHandler.Movement.Jump && !hasJumped && grounded)
-                {
-                    
-                }
+
             }
-            if (!base.grounded)
-                playerAnim.PlayAnim("walkRight");
- 
+            //if (base.grounded)
+             //   playerAnim.PlayAnim("walkRight");
         }
 
         private void HandleSkills(List<InputHandler.Movement> moves)
@@ -117,6 +127,8 @@ namespace Diploma2015.Entity
         {
             playerAnim.AddAnimation(4, 0, 170, "walkRight", 70, 70);
             playerAnim.AddAnimation(4, 0, 250, "walkLeft", 70, 70);
+            playerAnim.AddAnimation(1, 330, 260, "jumpLeft", 50, 80);
+            playerAnim.AddAnimation(1, 400, 260, "jumpRight", 50, 80);
 
             playerAnim.PlayAnim("walkLeft");
         }

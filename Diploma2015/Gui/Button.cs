@@ -26,11 +26,11 @@ namespace Diploma2015.Gui
 
             if (this.shape.Equals("Rectangle"))
             {
-                this.componentRectangle = new Rectangle(x, y, GameConsts.MediumButtonWidth, GameConsts.MediumButtonHeight);
+                this.componentRectangle = new Rectangle(x, y, GameVars.MediumButtonWidth, GameVars.MediumButtonHeight);
             }
             else
             {
-                this.componentRectangle = new Rectangle(x, y, GameConsts.CircleButtonRadius, GameConsts.CircleButtonRadius);
+                this.componentRectangle = new Rectangle(x, y, GameVars.CircleButtonRadius, GameVars.CircleButtonRadius);
             }
             this.initialRect = this.componentRectangle;
             this.rect = changeRect(this.posDiff * this.scaleDiff * -1, this.sizeDiff * this.scaleDiff, this.componentRectangle);

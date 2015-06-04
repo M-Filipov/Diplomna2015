@@ -41,13 +41,13 @@ namespace Diploma2015.Screens
         {
             base.LoadContent();
             gManager = new GUIManager();
-            gManager.AddComponent(new Button((int)(GameConsts.ScreenWidth * 0.4), (int)(GameConsts.ScreenHeight * 0.8), true, "Rectangle"));
+            gManager.AddComponent(new Button((int)(GameVars.ScreenWidth * 0.4), (int)(GameVars.ScreenHeight * 0.8), true, "Rectangle"));
             foreach (Button button in gManager.components)
             {
                 if (button.shape.Equals("Rectangle"))
                 {
-                    button.currentTexture = button.onFreeTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_out");
-                    button.onClickTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_in");
+                    button.currentTexture = button.onFreeTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_out_choosePlayer");
+                    button.onClickTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_in_choosePlayer");
                     button.isResizable = true;
                 }
             }
@@ -81,9 +81,9 @@ namespace Diploma2015.Screens
             if (gManager.components[0].isMouseClicked)
             {
                 if (currentSelectedPlayer != null)
-                    GameConsts.chosenPlayer = currentSelectedPlayer;
+                    GameVars.chosenPlayer = currentSelectedPlayer;
                 else
-                    GameConsts.chosenPlayer = "characterTwo";
+                    GameVars.chosenPlayer = "characterTwo";
 
                 ScreenManager.Instance.ChangeToScreen(new GameScreen());
             }
@@ -129,7 +129,7 @@ namespace Diploma2015.Screens
         public override void Draw(SpriteBatch spriteBatch)
         {
 
-            spriteBatch.Draw(background, new Rectangle(0, 0, GameConsts.ScreenWidth, GameConsts.ScreenHeight), Color.White);
+            spriteBatch.Draw(background, new Rectangle(0, 0, GameVars.ScreenWidth, GameVars.ScreenHeight), Color.White);
 
             characterOne.selectingAnim.Draw(spriteBatch);
             characterTwo.selectingAnim.Draw(spriteBatch);

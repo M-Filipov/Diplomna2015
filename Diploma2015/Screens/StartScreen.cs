@@ -31,17 +31,23 @@ namespace Diploma2015.Screens
             base.LoadContent();
 
             gManager = new GUIManager();
-            gManager.AddComponent(new Button((int)(GameConsts.ScreenWidth * 0.4), (int)(GameConsts.ScreenHeight * 0.40), true, "Rectangle"));
-            gManager.AddComponent(new Button((int)(GameConsts.ScreenWidth * 0.4), (int)(GameConsts.ScreenHeight * 0.55), true, "Rectangle"));
+            gManager.AddComponent(new Button((int)(GameVars.ScreenWidth * 0.4), (int)(GameVars.ScreenHeight * 0.40), true, "Rectangle"));
+            gManager.AddComponent(new Button((int)(GameVars.ScreenWidth * 0.4), (int)(GameVars.ScreenHeight * 0.55), true, "Rectangle"));
            // gManager.AddComponent(new Button((int)(GameConsts.ScreenWidth * 0.4), (int)(GameConsts.ScreenHeight * 0.70), true, "Rectangle"));
-            gManager.AddComponent(new Button(0, GameConsts.ScreenHeight - GameConsts.CircleButtonRadius, true, "Circle"));
+            gManager.AddComponent(new Button(0, GameVars.ScreenHeight - GameVars.CircleButtonRadius, true, "Circle"));
 
             foreach (Button button in gManager.components)
             {
-                if (button.shape.Equals("Rectangle"))
+                if (button.shape.Equals("Rectangle") && gManager.components.IndexOf(button) == 0)
                 {
-                    button.currentTexture = button.onFreeTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_out");
-                    button.onClickTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_in");
+                    button.currentTexture = button.onFreeTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_out_start");
+                    button.onClickTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_in_start");
+                    button.isResizable = true;
+                }
+                else if (button.shape.Equals("Rectangle") && gManager.components.IndexOf(button) == 1)
+                {
+                    button.currentTexture = button.onFreeTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_out_help");
+                    button.onClickTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_in_help");
                     button.isResizable = true;
                 }
                 else
@@ -56,7 +62,7 @@ namespace Diploma2015.Screens
             easyModeTex = content.Load<Texture2D>("assets/2d/gui/easyMode");
             hardModeTex = content.Load<Texture2D>("assets/2d/gui/hardMode");
 
-            gameMode = new SelectingImgs((int)(GameConsts.ScreenWidth * 0.40), (int)(GameConsts.ScreenHeight * 0.85), 250, 60, easyModeTex);
+            gameMode = new SelectingImgs((int)(GameVars.ScreenWidth * 0.40), (int)(GameVars.ScreenHeight * 0.85), 250, 60, easyModeTex);
 
         }
 
@@ -94,14 +100,14 @@ namespace Diploma2015.Screens
 
             if(gameMode.ifSelected(mouseState, prevMouseState))
             {
-                if(GameConsts.Difficulty == "easy")
+                if(GameVars.Difficulty == "easy")
                 {
-                    GameConsts.Difficulty = "hard";
+                    GameVars.Difficulty = "hard";
                     gameMode.selectingSprite = hardModeTex;
                 }
                 else
                 {
-                    GameConsts.Difficulty = "easy";
+                    GameVars.Difficulty = "easy";
                     gameMode.selectingSprite = easyModeTex;
                 }
             }
@@ -111,7 +117,7 @@ namespace Diploma2015.Screens
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(background, new Rectangle(0, 0, GameConsts.ScreenWidth, GameConsts.ScreenHeight), Color.White);
+            spriteBatch.Draw(background, new Rectangle(0, 0, GameVars.ScreenWidth, GameVars.ScreenHeight), Color.White);
 
             foreach (Button gComponent in gManager.components)
             {
@@ -124,7 +130,7 @@ namespace Diploma2015.Screens
                     spriteBatch.Draw(gComponent.currentTexture, new Vector2(gComponent.componentRectangle.X, gComponent.componentRectangle.Y), Color.White);
                 }
 
-                spriteBatch.Draw(soundTex, new Rectangle(0 + 20, GameConsts.ScreenHeight - GameConsts.CircleButtonRadius + 20, 50, 50), Color.White);
+                spriteBatch.Draw(soundTex, new Rectangle(0 + 20, GameVars.ScreenHeight - GameVars.CircleButtonRadius + 20, 50, 50), Color.White);
             }
 
             gameMode.DrawSelectingImgs(spriteBatch);
@@ -139,14 +145,14 @@ namespace Diploma2015.Screens
                 isMute = true;
                 soundTex = content.Load<Texture2D>("assets/2d/gui/symb_mute");
                 this.buttonTimer = 0;
-                GameConsts.IsSoundOn = false;
+                GameVars.IsSoundOn = false;
             }
             else if (isMute && this.buttonTimer == buttonTimer)
             {
                 isMute = false;
                 soundTex = content.Load<Texture2D>("assets/2d/gui/symb_volume");
                 this.buttonTimer = 0;
-                GameConsts.IsSoundOn = true;
+                GameVars.IsSoundOn = true;
             }
         }
     }

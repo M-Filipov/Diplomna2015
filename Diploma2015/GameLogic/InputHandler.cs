@@ -16,9 +16,6 @@ namespace Diploma2015.GameLogic
             Right,
             Jump,
             Stand,
-            AbilityOne,
-            AbilityTwo,
-            AbilityThree,
         }
 
         public static List<Movement> getInput()
@@ -32,12 +29,6 @@ namespace Diploma2015.GameLogic
                 moves.Add(Movement.Right);
             if ((state.IsKeyDown(Keys.W)) && !(oldState.IsKeyDown(Keys.W)))
                 moves.Add(Movement.Jump);
-            if(state.IsKeyDown(Keys.Q))
-                moves.Add(Movement.AbilityOne);
-            if (state.IsKeyDown(Keys.E))
-                moves.Add(Movement.AbilityTwo);
-            if (state.IsKeyDown(Keys.R))
-                moves.Add(Movement.AbilityThree);
 
             oldState = state;
             return moves;    

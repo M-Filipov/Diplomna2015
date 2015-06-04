@@ -98,8 +98,8 @@ namespace Diploma2015.GameLogic
                 while (currentNode.NodePos != end.NodePos)
                 {
                     bugFlag++;
-                    minCostNode.H = GameConsts.veryBigVal;
-                    if (bugFlag > GameConsts.bugVal)
+                    minCostNode.H = GameVars.veryBigVal;
+                    if (bugFlag > GameVars.bugVal)
                         break;
                     for (int i = 0; i < currentNode.connectors.Count; i++)
                     {

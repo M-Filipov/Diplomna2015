@@ -19,15 +19,15 @@ namespace Diploma2015.Screens
             base.LoadContent();
 
             gManager = new GUIManager();
-            gManager.AddComponent(new Button(-100, (GameConsts.ScreenHeight - GameConsts.MediumButtonHeight), true, "Rectangle"));
-            gManager.AddComponent(new Button((int)(GameConsts.ScreenWidth * 0.37), ((int)(GameConsts.ScreenHeight * 0.7)), true, "Rectangle"));
+            gManager.AddComponent(new Button(-100, (GameVars.ScreenHeight - GameVars.MediumButtonHeight), true, "Rectangle"));
+            gManager.AddComponent(new Button((int)(GameVars.ScreenWidth * 0.37), ((int)(GameVars.ScreenHeight * 0.7)), true, "Rectangle"));
 
             gManager.components[0].isResizable = false;
 
             foreach (Button button in gManager.components)
             {
-                button.onClickTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_out");
-                button.currentTexture = button.onFreeTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_out");
+                button.onClickTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_out_playAgain");
+                button.currentTexture = button.onFreeTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_out_playAgain");
             }
 
             exitTexture = content.Load<Texture2D>("assets/2d/gui/symb_leftarrow");
@@ -66,7 +66,7 @@ namespace Diploma2015.Screens
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(background, new Rectangle(0, 0, GameConsts.ScreenWidth, GameConsts.ScreenHeight), Color.White);
+            spriteBatch.Draw(background, new Rectangle(0, 0, GameVars.ScreenWidth, GameVars.ScreenHeight), Color.White);
 
             foreach (GUIComponent gComponent in gManager.components)
             {
@@ -76,7 +76,7 @@ namespace Diploma2015.Screens
                 }
             }
 
-            spriteBatch.Draw(exitTexture, new Rectangle(gManager.components[0].componentRectangle.X + 105, GameConsts.ScreenHeight - 52, 80, 40), Color.White);
+            spriteBatch.Draw(exitTexture, new Rectangle(gManager.components[0].componentRectangle.X + 105, GameVars.ScreenHeight - 52, 80, 40), Color.White);
 
             base.Draw(spriteBatch);
         }

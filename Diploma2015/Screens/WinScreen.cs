@@ -19,12 +19,12 @@ namespace Diploma2015.Screens
             base.LoadContent();
 
             gManager = new GUIManager();
-            gManager.AddComponent(new Button((int)(GameConsts.ScreenWidth * 0.37), ((int)(GameConsts.ScreenHeight * 0.7)), true, "Rectangle"));
+            gManager.AddComponent(new Button((int)(GameVars.ScreenWidth * 0.37), ((int)(GameVars.ScreenHeight * 0.7)), true, "Rectangle"));
 
             foreach (Button button in gManager.components)
             {
-                button.onClickTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_out");
-                button.currentTexture = button.onFreeTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_out");
+                button.onClickTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_out_playAgain");
+                button.currentTexture = button.onFreeTex = content.Load<Texture2D>("assets/2d/gui/blue_rect_out_playAgain");
             }
             background = content.Load<Texture2D>("assets/2d/gui/winScreen");
         }
@@ -48,7 +48,7 @@ namespace Diploma2015.Screens
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(background, new Rectangle(0, 0, GameConsts.ScreenWidth, GameConsts.ScreenHeight), Color.White);
+            spriteBatch.Draw(background, new Rectangle(0, 0, GameVars.ScreenWidth, GameVars.ScreenHeight), Color.White);
 
             foreach (GUIComponent gComponent in gManager.components)
             {

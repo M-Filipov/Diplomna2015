@@ -17,11 +17,11 @@ namespace Diploma2015.GameLogic
 
             foreach (Platforms pl in platforms)
             {
-                for (float plX = pl.position.X - GameConsts.CoinInterval; plX <= pl.position.X + pl.width + GameConsts.CoinInterval; plX++)
+                for (float plX = pl.position.X - GameVars.CoinInterval; plX <= pl.position.X + pl.width + GameVars.CoinInterval; plX++)
                 {
-                    if (plX % GameConsts.CoinInterval == 0)
+                    if (plX % GameVars.CoinInterval == 0)
                     {
-                        Coin coin = new Coin(new Vector2(plX, pl.position.Y - GameConsts.CoinInterval), GameConsts.CoinW, GameConsts.CoinH, coinTex);
+                        Coin coin = new Coin(new Vector2(plX, pl.position.Y - GameVars.CoinInterval), GameVars.CoinW, GameVars.CoinH, coinTex);
                         CoinsList.Add(coin);
                     }
                 }

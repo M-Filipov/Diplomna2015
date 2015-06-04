@@ -29,7 +29,7 @@ namespace Diploma2015.Screens
 
         private ScreenManager()
         {
-            Dimensions = new Vector2(GameConsts.ScreenWidth, GameConsts.ScreenHeight);
+            Dimensions = new Vector2(GameVars.ScreenWidth, GameVars.ScreenHeight);
             currentScreen = new StartScreen();
         }
 
